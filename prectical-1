@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nested List Example</title>
+</head>
+<body>
+
+    <h2>Nested Ordered and Unordered List</h2>
+
+    <ol>
+        <li>vehicle
+            <ul>
+                <li>bike</li>
+                <li>cycle</li>
+                <li>car</li>
+            </ul>
+        </li>
+
+        <li>seasons
+            <ul>
+                <li>winter</li>
+                <li>summer</li>
+                <li>monsoon</li>
+            </ul>
+        </li>
+
+        <li>drinks
+            <ol>
+                <li>Tea</li>
+                <li>Coffee</li>
+                <li>Juice</li>
+            </ol>
+        </li>
+    </ol>
+
+</body>
+</html>
