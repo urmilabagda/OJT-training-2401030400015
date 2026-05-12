@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    table {
+      width: 80%;
+      margin: auto;
+      border-collapse: collapse;
+      background-color: white;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #ff0000;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #ffe6e6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Website Product Details</h2>
+
+  <table>
+    <tr>
+      <th>Product Name</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>Rating</th>
+      <th>Availability</th>
+    </tr>
+    <tr>
+      <td>Red Dress</td>
+      <td>Women</td>
+      <td>₹1,499</td>
+      <td>⭐ 4.5</td>
+      <td>In Stock</td>
+    </tr>
+    <tr>
+      <td>Kids Shoes</td>
+      <td>Kids</td>
+      <td>₹899</td>
+      <td>⭐ 4.2</td>
+      <td>In Stock</td>
+    </tr>
+    <tr>
+      <td>Men Watch</td>
+      <td>Men</td>
+      <td>₹2,499</td>
+      <td>⭐ 4.8</td>
+      <td>Limited</td>
+    </tr>
+    <tr>
+      <td>Leather Bag</td>
+      <td>Accessories</td>
+      <td>₹1,999</td>
+      <td>⭐ 4.6</td>
+      <td>Out of Stock</td>
+    </tr>
+  </table>
+
+</body>
+</html>
