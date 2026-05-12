@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Web Page</title>
+
+  <style>
+
+    body{
+      margin: 0;
+    }
+
+    .top-header {
+      display: flex;
+      background-color: black;
+      align-items: center;
+      padding: 1px 0px;
+    }
+
+    .left {
+      flex: 1;
+      text-align: left;
+    }
+
+    .center {
+      flex: 1;
+      text-align: center;
+    }
+
+    .right {
+      flex: 1;
+      color: beige;
+      text-align: right;
+    }
+
+    .top-header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .header {
+      background-color: lightgray;
+      overflow: hidden;
+      padding: 9px 12px;
+      font-family: Arial, sans-serif;
+    }
+
+    .header .logo {
+      color: red;
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      float: left;
+      padding: 10px 12px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .header .logo:hover {
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+    }
+
+    
+    .header-right {
+      float: right;
+    }
+
+    .header-right a {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .header-right a:hover {
+      background-color: white;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .header-right a.active {
+      background-color: red;
+      color: white;
+      border-radius: 5px;
+    }
+.categorybar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  padding: 7px 20px;
+}
+
+/* Left section - categories */
+.categorybar .left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.categorybar .left a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.categorybar .left a:hover {
+  color: red;
+}
+
+/* Center section - search bar */
+.categorybar .center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.categorybar .center form {
+  display: flex;
+  align-items: center;
+}
+
+.categorybar .center input[type="text"] {
+  padding: 6px;
+  border: 1px solid white;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.categorybar .center button {
+  padding: 6px 12px;
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.categorybar .center button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Right section - icons */
+.categorybar .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: flex-end; /* icons bilkul right side me */
+  flex-shrink: 0; /* icons ko squeeze hone se bachata hai */
+}
+
+.categorybar .right a {
+  color: white;
+  font-size: 20px;
+  transition: color 0.2s ease;
+}
+
+.categorybar .right a:hover {
+  color: red;
+}
+
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="top-header">
+
+      <div class="left">
+        <a href="#">Track your order</a>
+      </div>
+
+      <div class="center">
+        <a href="tel:+12345879541">Call +12345 879 541</a>
+      </div>
+
+      <div class="right">
+        <span>ENG | </span>
+        <span>USD</span>
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <div class="header">
+
+    <a href="#default" class="logo">Klook</a>
+
+    <div class="header-right">
+      <a class="active" href="#login">login</a>
+      <a href="#sing up">sing up</a>
+      <a href="#help">Help</a>
+    </div>
+
+  </div>
+   
+  <div class="categorybar">
+    <div class="left">
+    <a href="#women">women</a>
+    <a href="#kids">kids</a>
+    <a href="#men">men</a>
+    <a href="#footware">footware</a>
+    <a href="#bag">bag</a>
+    <a href="#watch">watch</a>
+    <a href="#buty">buty</a>
+    <a href="#Gen Z">Gen z</a>
+    <a href="#Babyshop">Babyshop</a>
+    </div>
+    <div class="center">
+    <div class="searchbar">
+      <input  type="text" name="search box" placeholder="search here ....">
+      <button type="submit">search</button>
+    </div>
+    <div class="right">
+        <a href="#profile"><i class="fa fa-user"></i></a>
+    <a href="#wishlist"><i class="fa fa-heart"></i></a>
+    <a href="#bag"><i class="fa fa-shopping-bag"></i></a>
+    </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+ <img src="C:\Users\urmil\Downloads\klook.jpeg" alt="myimage" 
+     class="myimage" height="600px" width="1600px">
+
+   
+</body>
+
+</html>
