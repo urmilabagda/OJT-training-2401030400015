@@ -113,6 +113,25 @@
   color: red;
 }
 
+.categorybar .left a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.3s;
+    display:inline-block;
+}
+
+/* Hover Animation */
+.categorybar .left a:hover{
+    color:red;
+    transform: scale(1.2);
+}
+
+/* Click Animation */
+.categorybar .left a:active{
+    transform: scale(1.35);
+}
+
 /* Center section - search bar */
 .categorybar .center {
   display: flex;
@@ -153,8 +172,8 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  justify-content: flex-end; /* icons bilkul right side me */
-  flex-shrink: 0; /* icons ko squeeze hone se bachata hai */
+  justify-content: flex-end; 
+  flex-shrink: 0; 
 }
 
 .categorybar .right a {
@@ -167,6 +186,24 @@
   color: red;
 }
 
+.categorybar .right a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+    transition:0.3s;
+    display:inline-block;
+}
+
+/* Hover Animation */
+.categorybar .right a:hover{
+    color:red;
+    transform: scale(1.2);
+}
+
+/* Click Animation */
+.categorybar .right a:active{
+    transform: scale(1.35);
+}
 
   </style>
 </head>
@@ -201,7 +238,7 @@
 
     <div class="header-right">
       <a class="active" href="#login">login</a>
-      <a href="#sing up">sing up</a>
+      <a href="#sing up">Register</a>
       <a href="#help">Help</a>
     </div>
 
@@ -209,15 +246,13 @@
    
   <div class="categorybar">
     <div class="left">
-    <a href="#women">women</a>
-    <a href="#kids">kids</a>
-    <a href="#men">men</a>
-    <a href="#footware">footware</a>
-    <a href="#bag">bag</a>
-    <a href="#watch">watch</a>
-    <a href="#buty">buty</a>
-    <a href="#Gen Z">Gen z</a>
-    <a href="#Babyshop">Babyshop</a>
+    <a href="#Skincare">Skincare</a>
+    <a href="#Makeup">Makeup</a>
+    <a href="#Haircare">Haircare</a>
+    <a href="#Fragrance">Fragrance</a>
+    <a href="#New Arrivals">New Arrivals</a>
+    <a href="#Offers">Offers</a>
+   
     </div>
     <div class="center">
     <div class="searchbar">
@@ -234,8 +269,8 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
- <img src="C:\Users\urmil\Downloads\klook.jpeg" alt="myimage" 
-     class="myimage" height="600px" width="1600px">
+ <img src="https://copilot.microsoft.com/th/id/BCO.f0ff512a-8afb-44ef-8bfc-43e80d214754.png" alt="myimage" height="600px" width="1220px">
+
 
    
 </body>
