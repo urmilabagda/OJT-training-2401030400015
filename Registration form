@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Klook Registration Form</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f2f2f2;
+}
+
+/* TOP HEADER */
+
+.top-header{
+    background:black;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    padding:8px 25px;
+    font-size:14px;
+}
+
+.top-header a{
+    color:white;
+    text-decoration:none;
+}
+
+/* MAIN HEADER */
+
+.header{
+    background:lightgray;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+}
+
+.logo{
+    color:red;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.header-right a{
+    text-decoration:none;
+    color:black;
+    margin-left:20px;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.header-right a:hover{
+    color:red;
+}
+
+/* FORM */
+
+.form-container{
+    width:420px;
+    background:white;
+    margin:60px auto;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.form-container h2{
+    text-align:center;
+    margin-bottom:25px;
+    color:red;
+    font-size:32px;
+}
+
+/* INPUTS */
+
+.input-box{
+    margin-bottom:18px;
+}
+
+.input-box label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+.input-box input,
+.input-box select{
+    width:100%;
+    padding:12px;
+    border:1px solid gray;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+    box-sizing:border-box;
+    transition:0.3s;
+}
+
+.input-box input:focus,
+.input-box select:focus{
+    border-color:red;
+    transform:scale(1.02);
+}
+
+/* BUTTON */
+
+.register-btn{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:red;
+    color:white;
+    font-size:17px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.register-btn:hover{
+    background:black;
+    transform:scale(1.03);
+}
+
+/* DIVIDER */
+
+.divider{
+    display:flex;
+    align-items:center;
+    margin:25px 0;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:gray;
+}
+
+.divider span{
+    margin:0 10px;
+    color:gray;
+}
+
+/* SOCIAL LOGIN */
+
+.social-login{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.social-btn{
+    width:100%;
+    padding:12px;
+    border:1px solid gray;
+    border-radius:8px;
+    background:white;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:18px;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.social-btn:hover{
+    background:#f5f5f5;
+    transform:scale(1.03);
+}
+
+.social-btn i{
+    margin-left:10px;
+    font-size:18px;
+}
+
+/* BOTTOM TEXT */
+
+.bottom-text{
+    text-align:center;
+    margin-top:20px;
+    font-size:14px;
+}
+
+.bottom-text a{
+    color:red;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP HEADER -->
+
+<div class="top-header">
+
+    <div>
+        <a href="#">Track your order</a>
+    </div>
+
+    <div>
+        <a href="#">Call +12345 879 541</a>
+    </div>
+
+    <div>
+        ENG | USD
+    </div>
+
+</div>
+
+<!-- MAIN HEADER -->
+
+<div class="header">
+
+    <div class="logo">Klook</div>
+
+    <div class="header-right">
+        <a href="#">Login</a>
+        <a href="#">Help</a>
+    </div>
+
+</div>
+
+<!-- REGISTRATION FORM -->
+
+<div class="form-container">
+
+    <h2>Create Account</h2>
+
+    <form>
+
+        <!-- FULL NAME -->
+
+        <div class="input-box">
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your full name" required>
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="input-box">
+            <label>Email</label>
+            <input type="email" placeholder="Enter your email" required>
+        </div>
+
+        <!-- PASSWORD -->
+
+        <div class="input-box">
+            <label>Password</label>
+            <input type="password" placeholder="Create password" required>
+        </div>
+
+        <!-- GENDER -->
+
+        <div class="input-box">
+            <label>Gender</label>
+
+            <select required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <!-- MOBILE NUMBER -->
+
+        <div class="input-box">
+            <label>Mobile Number</label>
+            <input type="tel" placeholder="Enter mobile number" required>
+        </div>
+
+        <!-- BUTTON -->
+
+        <button class="register-btn">
+            Register
+        </button>
+
+    </form>
+
+    <div class="divider">
+        <span>OR</span>
+    </div>
+
+    <!-- SOCIAL LOGIN -->
+
+    <div class="social-login">
+
+        <button class="social-btn">
+            <i class="fa-brands fa-google"></i>
+            Register with Google
+        </button>
+
+        <button class="social-btn">
+            <i class="fa-brands fa-apple"></i>
+            Register with Apple ID
+        </button>
+
+        <button class="social-btn">
+            <i class="fa-brands fa-facebook-f"></i>
+            Register with Facebook
+        </button>
+
+    </div>
+
+    <div class="bottom-text">
+        Already have an account?
+        <a href="#">Login</a>
+    </div>
+
+</div>
+
+</body>
+</html>
