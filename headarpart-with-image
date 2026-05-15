@@ -6,59 +6,64 @@
 
   <style>
 
-    body{
-      margin: 0;
-    }
+    body {
+  margin: 0;
+ background-color: whitesmoke;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
     .top-header {
-      display: flex;
-      background-color: black;
-      align-items: center;
-      padding: 1px 0px;
-    }
+  display: flex;
+  background-color: black;
+  align-items: center;
+  padding: 1px 0px;
+} 
 
     .left {
       flex: 1;
+      color: white;
       text-align: left;
     }
 
     .center {
       flex: 1;
+      color: white;
       text-align: center;
     }
 
     .right {
       flex: 1;
-      color: beige;
+      color: white;
       text-align: right;
     }
 
     .top-header a {
-      color: white;
-      text-decoration: none;
-    }
+   color: white ;
+  text-decoration : none;
+}
 
     .header {
-      background-color: lightgray;
+      background-color:whitesmoke; /* soft mint */
       overflow: hidden;
       padding: 9px 12px;
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
+
     .header .logo {
-      color: red;
-      font-size: 18px;
+       color:purple; /* coral logo */
+      font-size: 22px;
       font-weight: bold;
       text-decoration: none;
       float: left;
-      padding: 10px 12px;
+      padding: 12px 15px;
       cursor: pointer;
       display: block;
     }
 
     .header .logo:hover {
-      background-color: white;
-      color: black;
+      background-color: black;
+     color:white; 
       border-radius: 5px;
     }
 
@@ -69,7 +74,7 @@
 
     .header-right a {
       display: inline-block;
-      color: black;
+       color:black;
       text-align: center;
       padding: 10px 12px;
       text-decoration: none;
@@ -77,21 +82,21 @@
     }
 
     .header-right a:hover {
-      background-color: white;
-      color: black;
+      background-color:black ;
+      color: white;
       border-radius: 5px;
     }
 
     .header-right a.active {
-      background-color: red;
-      color: white;
+     background-color: black;
+     color: white;
       border-radius: 5px;
     }
 .categorybar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: black;
+  background-color: rgb(90, 26, 90);
   padding: 7px 20px;
 }
 
@@ -103,29 +108,17 @@
 }
 
 .categorybar .left a {
-  color: white;
+   color: white; /* white text */
   text-decoration: none;
   font-size: 15px;
   transition: color 0.2s ease;
 }
 
 .categorybar .left a:hover {
-  color: red;
+  color: rgb(177, 177, 57);
+  transform: scale(1.2);
 }
 
-.categorybar .left a{
-    color:white;
-    text-decoration:none;
-    font-size:16px;
-    transition:0.3s;
-    display:inline-block;
-}
-
-/* Hover Animation */
-.categorybar .left a:hover{
-    color:red;
-    transform: scale(1.2);
-}
 
 /* Click Animation */
 .categorybar .left a:active{
@@ -147,7 +140,7 @@
 
 .categorybar .center input[type="text"] {
   padding: 6px;
-  border: 1px solid white;
+  border: 1px solid lightgrey;
   border-radius: 4px 0 0 4px;
   outline: none;
 }
@@ -155,7 +148,7 @@
 .categorybar .center button {
   padding: 6px 12px;
   border: none;
-  background-color: red;
+ background-color: rgb(180, 180, 93);
   color: white;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
@@ -163,8 +156,9 @@
 }
 
 .categorybar .center button:hover {
-  background-color: white;
-  color: black;
+ background-color: white ;
+  color: purple;
+
 }
 
 /* Right section - icons */
@@ -177,13 +171,14 @@
 }
 
 .categorybar .right a {
-  color: white;
+ color: white;
   font-size: 20px;
   transition: color 0.2s ease;
 }
 
 .categorybar .right a:hover {
-  color: red;
+  color:red;
+  transform: scale(1.2);
 }
 
 .categorybar .right a{
@@ -192,12 +187,6 @@
     font-size:16px;
     transition:0.3s;
     display:inline-block;
-}
-
-/* Hover Animation */
-.categorybar .right a:hover{
-    color:red;
-    transform: scale(1.2);
 }
 
 /* Click Animation */
@@ -234,7 +223,7 @@
 
   <div class="header">
 
-    <a href="#default" class="logo">Klook</a>
+    <a href="#default" class="logo">Lumira</a>
 
     <div class="header-right">
       <a class="active" href="#login">login</a>
@@ -269,7 +258,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
- <img src="https://copilot.microsoft.com/th/id/BCO.f0ff512a-8afb-44ef-8bfc-43e80d214754.png" alt="myimage" height="600px" width="1220px">
+ <img src="https://copilot.microsoft.com/th/id/BCO.d5c65d36-b978-4fd7-92b7-193b67ec46d8.png" alt="myimage" height="600px" width="1220px">
 
 
    
