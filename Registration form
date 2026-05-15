@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Klook Registration Form</title>
+<title>Lumira Registration Form</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -13,7 +13,7 @@
 body{
     margin:0;
     font-family:Arial, sans-serif;
-    background:#f2f2f2;
+    background:whitesmoke;
 }
 
 /* TOP HEADER */
@@ -35,17 +35,25 @@ body{
 /* MAIN HEADER */
 
 .header{
-    background:lightgray;
+    background:whitesmoke;
     display:flex;
     justify-content:space-between;
     align-items:center;
     padding:15px 30px;
+    border-bottom:1px solid lightgray;
 }
 
 .logo{
-    color:red;
+    color:purple;
     font-size:30px;
     font-weight:bold;
+}
+
+.header .logo:hover{
+    background:black;
+    color:white;
+    border-radius:5px;
+    
 }
 
 .header-right a{
@@ -54,10 +62,66 @@ body{
     margin-left:20px;
     font-size:15px;
     transition:0.3s;
+    padding:8px 12px;
+    border-radius:5px;
 }
 
 .header-right a:hover{
-    color:red;
+    background:black;
+    color:white;
+}
+
+/* CATEGORY BAR */
+
+.categorybar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgb(90, 26, 90);
+    padding:12px 25px;
+}
+
+.category-left{
+    display:flex;
+    gap:22px;
+}
+
+.category-left a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.category-left a:hover{
+    color:rgb(180,180,93);
+    transform:scale(1.1);
+}
+
+.searchbar{
+    display:flex;
+}
+
+.searchbar input{
+    padding:8px;
+    border:none;
+    outline:none;
+    border-radius:5px 0 0 5px;
+}
+
+.searchbar button{
+    padding:8px 15px;
+    border:none;
+    background:rgb(180,180,93);
+    color:white;
+    border-radius:0 5px 5px 0;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.searchbar button:hover{
+    background:white;
+    color:purple;
 }
 
 /* FORM */
@@ -67,14 +131,15 @@ body{
     background:white;
     margin:60px auto;
     padding:35px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.2);
+    border-radius:18px;
+    box-shadow:0 0 18px rgba(0,0,0,0.15);
+    border-top:6px solid purple;
 }
 
 .form-container h2{
     text-align:center;
     margin-bottom:25px;
-    color:red;
+    color:black;
     font-size:32px;
 }
 
@@ -88,13 +153,14 @@ body{
     display:block;
     margin-bottom:8px;
     font-weight:bold;
+    color:black;
 }
 
 .input-box input,
 .input-box select{
     width:100%;
     padding:12px;
-    border:1px solid gray;
+    border:1px solid lightgray;
     border-radius:8px;
     outline:none;
     font-size:15px;
@@ -104,8 +170,9 @@ body{
 
 .input-box input:focus,
 .input-box select:focus{
-    border-color:red;
+    border-color:black;
     transform:scale(1.02);
+    box-shadow:0 0 8px rgba(128,0,128,0.2);
 }
 
 /* BUTTON */
@@ -114,7 +181,7 @@ body{
     width:100%;
     padding:12px;
     border:none;
-    background:red;
+    background:rgb(90, 26, 90);
     color:white;
     font-size:17px;
     border-radius:8px;
@@ -124,6 +191,7 @@ body{
 
 .register-btn:hover{
     background:black;
+    color:white;
     transform:scale(1.03);
 }
 
@@ -140,7 +208,7 @@ body{
     content:"";
     flex:1;
     height:1px;
-    background:gray;
+    background:lightgray;
 }
 
 .divider span{
@@ -159,7 +227,7 @@ body{
 .social-btn{
     width:100%;
     padding:12px;
-    border:1px solid gray;
+    border:1px solid lightgray;
     border-radius:8px;
     background:white;
     cursor:pointer;
@@ -171,13 +239,15 @@ body{
 }
 
 .social-btn:hover{
-    background:#f5f5f5;
+    background:whitesmoke;
     transform:scale(1.03);
+    border-color:black;
 }
 
 .social-btn i{
     margin-left:10px;
     font-size:18px;
+    color:black;
 }
 
 /* BOTTOM TEXT */
@@ -189,9 +259,13 @@ body{
 }
 
 .bottom-text a{
-    color:red;
+    color:maroon;
     text-decoration:none;
     font-weight:bold;
+}
+
+.bottom-text a:hover{
+    color:black;
 }
 
 </style>
@@ -221,11 +295,31 @@ body{
 
 <div class="header">
 
-    <div class="logo">Klook</div>
+    <div class="logo">Lumira</div>
 
     <div class="header-right">
         <a href="#">Login</a>
         <a href="#">Help</a>
+    </div>
+
+</div>
+
+<!-- CATEGORY BAR -->
+
+<div class="categorybar">
+
+    <div class="category-left">
+        <a href="#">Skincare</a>
+        <a href="#">Makeup</a>
+        <a href="#">Haircare</a>
+        <a href="#">Fragrance</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Offers</a>
+    </div>
+
+    <div class="searchbar">
+        <input type="text" placeholder="Search here...">
+        <button>Search</button>
     </div>
 
 </div>
@@ -238,28 +332,20 @@ body{
 
     <form>
 
-        <!-- FULL NAME -->
-
         <div class="input-box">
             <label>Full Name</label>
             <input type="text" placeholder="Enter your full name" required>
         </div>
-
-        <!-- EMAIL -->
 
         <div class="input-box">
             <label>Email</label>
             <input type="email" placeholder="Enter your email" required>
         </div>
 
-        <!-- PASSWORD -->
-
         <div class="input-box">
             <label>Password</label>
             <input type="password" placeholder="Create password" required>
         </div>
-
-        <!-- GENDER -->
 
         <div class="input-box">
             <label>Gender</label>
@@ -272,14 +358,10 @@ body{
             </select>
         </div>
 
-        <!-- MOBILE NUMBER -->
-
         <div class="input-box">
             <label>Mobile Number</label>
             <input type="tel" placeholder="Enter mobile number" required>
         </div>
-
-        <!-- BUTTON -->
 
         <button class="register-btn">
             Register
