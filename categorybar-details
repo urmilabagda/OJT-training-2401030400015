@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Web Page</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+    body {
+      margin: 0;
+      background-color: whitesmoke;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ================= TOP HEADER ================= */
+
+    .top-header {
+      display: flex;
+      background-color: black;
+      align-items: center;
+      padding: 1px 0px;
+    }
+
+    .left {
+      flex: 1;
+      color: white;
+      text-align: left;
+    }
+
+    .center {
+      flex: 1;
+      color: white;
+      text-align: center;
+    }
+
+    .right {
+      flex: 1;
+      color: white;
+      text-align: right;
+    }
+
+    .top-header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* ================= MAIN HEADER ================= */
+
+    .header {
+       background-image:linear-gradient(to right , rgb(230, 224, 232), rgb(127, 73, 138));;
+      overflow: hidden;
+      padding: 9px 12px;
+    }
+
+    .header .logo {
+      color: purple;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      float: left;
+      padding: 12px 15px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .header .logo:hover {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    .header-right a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .header-right a:hover {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .header-right a.active {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    /* ================= CATEGORY BAR ================= */
+
+    .categorybar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(90, 26, 90);
+      padding: 7px 15px;
+    }
+
+    .categorybar .left {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .categorybar .left a {
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+
+    .categorybar .left a:hover,
+.categorybar .left a.active-category{
+    
+    color: rgb(180, 180, 93);
+    border-radius:5px;
+    transform: scale(1.05);
+}
+      .categorybar .left a.active-category{
+    color: rgb(180, 180, 93);
+    padding:8px 14px;
+    border-radius:5px;
+    font-weight:bold;
+     }
+
+    .categorybar .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .searchbar {
+      display: flex;
+      align-items: center;
+    }
+
+    .searchbar input {
+      padding: 7px;
+      border: none;
+      outline: none;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .searchbar button {
+      padding: 7px 12px;
+      border: none;
+      background-color: rgb(180, 180, 93);
+      color: white;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .searchbar button:hover {
+      background-color: white;
+      color: purple;
+    }
+
+    .categorybar .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .categorybar .right a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .categorybar .right a:hover {
+      color: red;
+      transform: scale(1.2);
+    }
+
+    /* ================= CATEGORY PAGE ================= */
+
+    .main-section {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    /* LEFT CATEGORY */
+
+    .sidebar {
+      width: 250px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px lightgray;
+      height: fit-content;
+    }
+
+    .sidebar h2 {
+      color: purple;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      padding: 12px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      transition: 0.3s;
+    }
+
+    /* ACTIVE CATEGORY */
+
+    .sidebar a.active {
+      background-color: purple;
+      color: white;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      background-color: rgb(230, 230, 230);
+      color: purple;
+      padding-left: 18px;
+    }
+
+    /* PRODUCT SECTION */
+
+    .products {
+      flex: 1;
+    }
+
+    .products h2 {
+      color: purple;
+      margin-bottom: 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0px 0px 10px lightgray;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .card h3 {
+      margin-top: 10px;
+      color: black;
+    }
+
+    .price {
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .btn {
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      background-image:linear-gradient(to right , rgb(113, 37, 134), rgb(211, 211, 202));
+    }
+
+    .btn:hover {
+      padding:15px 20px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP HEADER -->
+
+  <header>
+
+    <div class="top-header">
+
+      <div class="left">
+        <a href="#">Track your order</a>
+      </div>
+
+      <div class="center">
+        <a href="tel:+12345879541">Call +12345 879 541</a>
+      </div>
+
+      <div class="right">
+        <span>ENG | </span>
+        <span>USD</span>
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN HEADER -->
+
+  <div class="header">
+
+    <a href="#default" class="logo">Lumira</a>
+
+    <div class="header-right">
+      <a class="active" href="#login">Login</a>
+      <a href="#signup">Register</a>
+      <a href="#help">Help</a>
+    </div>
+
+  </div>
+
+  <!-- CATEGORY BAR -->
+
+  <div class="categorybar">
+
+    <div class="left">
+
+      <a class="active-category" href="#Skincare">Skincare</a>
+      <a href="#Makeup">Makeup</a>
+      <a href="#Haircare">Haircare</a>
+      <a href="#Fragrance">Fragrance</a>
+      <a href="#New Arrivals">NewArivals</a>
+      <a href="#Offers">Offers</a>
+
+    </div>
+
+    <div class="center">
+
+      <div class="searchbar">
+        <input type="text" placeholder="Search here....">
+        <button>Search</button>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <a href="#"><i class="fa fa-user"></i></a>
+      <a href="#"><i class="fa fa-heart"></i></a>
+      <a href="#"><i class="fa fa-shopping-bag"></i></a>
+    </div>
+
+  </div>
+
+  <!-- CATEGORY PAGE -->
+
+  <div class="main-section">
+
+    <!-- LEFT SIDEBAR -->
+
+    <div class="sidebar">
+
+      <h2>Skincare</h2>
+
+      <a class="active" href="#">Face Wash</a>
+      <a href="#">Moisturizers</a>
+      <a href="#">Serums</a>
+      <a href="#">Sunscreen</a>
+      <a href="#">Toners</a>
+      <a href="#">Face Masks</a>
+      <a href="#">Night Cream</a>
+      <a href="#">Lip Care</a>
+      <a href="#">Acne Care</a>
+      <a href="#">Eye Cream</a>
+
+    </div>
+
+    <!-- RIGHT PRODUCTS -->
+
+    <div class="products">
+
+      <h2>Face Wash Products</h2>
+
+      <div class="product-grid">
+
+  <!-- PRODUCT 1 -->
+
+  <div class="card">
+    <img src="https://copilot.microsoft.com/th/id/BCO.cf20545a-3dc3-47aa-9e01-2537b8dd228b.png">
+
+    <h3> Glow Face Wash</h3>
+
+    <p class="price">₹450</p>
+
+    <button class="btn">Add to Cart</button>
+    <button class="btn">Buy</button>
+  </div>
+
+  <!-- PRODUCT 2 -->
+
+  <div class="card">
+    <img src="https://copilot.microsoft.com/th/id/BCO.291eac31-9324-405c-a957-299835e4c341.png" width="100px" height="70px">
+
+    <h3>Neem Face Wash</h3>
+
+    <p class="price">₹549</p>
+
+    <button class="btn">Add to Cart</button>
+    <button class="btn">Buy</button>
+  </div>
+
+  <!-- PRODUCT 3 -->
+
+  <div class="card">
+    <img src="https://copilot.microsoft.com/th/id/BCO.ff5ef21a-b035-4bd7-b08c-71a0907ca694.png"  width="100px" height="70px">
+
+    <h3> Hydrating Face Wash</h3>
+
+    <p class="price">₹434</p>
+
+    <button class="btn">Add to Cart</button>
+    <button class="btn">Buy</button>
+  </div>
+
+  <!-- PRODUCT 4 -->
+
+  <div class="card">
+    <img src="https://copilot.microsoft.com/th/id/BCO.3d3929e3-05a9-4dfd-abd1-d951729dbde2.png"  width="100px" height="70px">
+
+    <h3>Vitamin C Face Wash</h3>
+
+    <p class="price">₹699</p>
+
+    <button class="btn">Add to Cart</button>
+    <button class="btn">Buy</button>
+  </div>
+
+  <!-- PRODUCT 5 -->
+
+  <div class="card">
+    <img src="https://copilot.microsoft.com/th/id/BCO.efebc3f3-d91e-4ed7-9ba1-19b329a04677.png"  width="100px" height="70px">
+
+    <h3> Aloe Vera Face Wash</h3>
+
+    <p class="price">₹569</p>
+
+    <button class="btn">Add to Cart</button>
+    <button class="btn">Buy</button>
+  </div>
+
+  <!-- PRODUCT 6 -->
+
+  <div class="card">
+    <img src="https://copilot.microsoft.com/th/id/BCO.15e7230b-d7af-453a-932e-c78e567c976f.png"  width="100px" height="70px">
+
+    <h3> Charcoal Face Wash</h3>
+
+    <p class="price">₹789</p>
+
+    <button class="btn">Add to Cart</button>
+    <button class="btn">Buy</button>
+  </div>
+
+</div>
+
+</body>
+
+</html>
