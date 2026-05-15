@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Product Details Page</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+    body {
+      margin: 0;
+      background-color: whitesmoke;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ================= TOP HEADER ================= */
+
+    .top-header {
+      display: flex;
+      background-color: black;
+      align-items: center;
+      padding: 1px 0px;
+    }
+
+    .left {
+      flex: 1;
+      color: white;
+      text-align: left;
+    }
+
+    .center {
+      flex: 1;
+      color: white;
+      text-align: center;
+    }
+
+    .right {
+      flex: 1;
+      color: white;
+      text-align: right;
+    }
+
+    .top-header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* ================= MAIN HEADER ================= */
+
+    .header {
+      background-image: linear-gradient(to right , rgb(230, 224, 232), rgb(127, 73, 138));
+      overflow: hidden;
+      padding: 9px 12px;
+    }
+
+    .header .logo {
+      color: purple;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      float: left;
+      padding: 12px 15px;
+      cursor: pointer;
+      display: block;
+    }
+
+    .header .logo:hover {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    .header-right a {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .header-right a:hover {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .header-right a.active {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    /* ================= CATEGORY BAR ================= */
+
+    .categorybar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(90, 26, 90);
+      padding: 7px 15px;
+    }
+
+    .categorybar .left {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .categorybar .left a {
+      color: white;
+      text-decoration: none;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+
+    .categorybar .left a:hover,
+    .categorybar .left a.active-category {
+      color: rgb(180, 180, 93);
+      border-radius: 5px;
+      transform: scale(1.05);
+    }
+
+    .categorybar .left a.active-category {
+      padding: 8px 14px;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .categorybar .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .searchbar {
+      display: flex;
+      align-items: center;
+    }
+
+    .searchbar input {
+      padding: 7px;
+      border: none;
+      outline: none;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .searchbar button {
+      padding: 7px 12px;
+      border: none;
+      background-color: rgb(180, 180, 93);
+      color: white;
+      cursor: pointer;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .searchbar button:hover {
+      background-color: white;
+      color: purple;
+    }
+
+    .categorybar .right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .categorybar .right a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .categorybar .right a:hover {
+      color: red;
+      transform: scale(1.2);
+    }
+
+    /* ================= MAIN SECTION ================= */
+
+    .main-section {
+      display: flex;
+      padding: 20px;
+      gap: 25px;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+      width: 230px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px lightgray;
+      height: fit-content;
+    }
+
+    .sidebar h2 {
+      color: purple;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      padding: 12px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      transition: 0.3s;
+    }
+
+    .sidebar a.active {
+      background-color: purple;
+      color: white;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      background-color: rgb(230, 230, 230);
+      color: purple;
+      padding-left: 18px;
+    }
+
+    /* PRODUCT DETAIL SECTION */
+
+    .product-detail {
+      flex: 1;
+      display: flex;
+      gap: 40px;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 12px lightgray;
+      align-items: center;
+    }
+
+    /* PRODUCT IMAGE */
+
+    .product-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .product-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+    }
+
+    /* PRODUCT INFO */
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h1 {
+      color: purple;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 28px;
+      color: black;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .description {
+      color: gray;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      margin-bottom: 20px;
+    }
+
+    .features li {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      color: white;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+      font-size: 15px;
+      background-image: linear-gradient(to right , rgb(113, 37, 134), rgb(211, 211, 202));
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP HEADER -->
+
+  <header>
+
+    <div class="top-header">
+
+      <div class="left">
+        <a href="#">Track your order</a>
+      </div>
+
+      <div class="center">
+        <a href="tel:+12345879541">Call +12345 879 541</a>
+      </div>
+
+      <div class="right">
+        <span>ENG | </span>
+        <span>USD</span>
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN HEADER -->
+
+  <div class="header">
+
+    <a href="#default" class="logo">Lumira</a>
+
+    <div class="header-right">
+      <a class="active" href="#login">Login</a>
+      <a href="#signup">Register</a>
+      <a href="#help">Help</a>
+    </div>
+
+  </div>
+
+  <!-- CATEGORY BAR -->
+
+  <div class="categorybar">
+
+    <div class="left">
+
+      <a class="active-category" href="#Skincare">Skincare</a>
+      <a href="#Makeup">Makeup</a>
+      <a href="#Haircare">Haircare</a>
+      <a href="#Fragrance">Fragrance</a>
+      <a href="#New Arrivals">NewArrivals</a>
+      <a href="#Offers">Offers</a>
+
+    </div>
+
+    <div class="center">
+
+      <div class="searchbar">
+        <input type="text" placeholder="Search here....">
+        <button>Search</button>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <a href="#"><i class="fa fa-user"></i></a>
+      <a href="#"><i class="fa fa-heart"></i></a>
+      <a href="#"><i class="fa fa-shopping-bag"></i></a>
+    </div>
+
+  </div>
+
+  <!-- MAIN SECTION -->
+
+  <div class="main-section">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+      <h2>Skincare</h2>
+
+      <a class="active" href="#">Face Wash</a>
+      <a href="#">Moisturizers</a>
+      <a href="#">Serums</a>
+      <a href="#">Sunscreen</a>
+      <a href="#">Toners</a>
+      <a href="#">Face Masks</a>
+      <a href="#">Night Cream</a>
+      <a href="#">Lip Care</a>
+      <a href="#">Acne Care</a>
+      <a href="#">Eye Cream</a>
+
+    </div>
+
+    <!-- PRODUCT DETAIL -->
+
+    <div class="product-detail">
+
+      <!-- PRODUCT IMAGE -->
+
+      <div class="product-image">
+
+        <img src="https://copilot.microsoft.com/th/id/BCO.cf20545a-3dc3-47aa-9e01-2537b8dd228b.png">
+
+      </div>
+
+      <!-- PRODUCT INFO -->
+
+      <div class="product-info">
+
+        <h1>Lumira Glow Face Wash</h1>
+
+        <p class="price">₹450</p>
+
+        <p class="description">
+          Lumira Glow Face Wash deeply cleans your skin and gives a natural glow.
+          It removes dirt, oil, and impurities while keeping your skin soft,
+          fresh, and hydrated all day.
+        </p>
+
+        <ul class="features">
+          <li>✔ Suitable for all skin types</li>
+          <li>✔ Removes excess oil & dirt</li>
+          <li>✔ Gives glowing and fresh skin</li>
+          <li>✔ Gentle daily face cleanser</li>
+          <li>✔ Hydrating formula</li>
+        </ul>
+
+        <button class="btn">Add to Cart</button>
+        <button class="btn">Buy Now</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
