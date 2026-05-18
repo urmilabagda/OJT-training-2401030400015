@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Lumira Login Form</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+rel="stylesheet">
 
 <style>
 
@@ -16,26 +21,10 @@ body{
     background:whitesmoke;
 }
 
-/* TOP HEADER */
-
-.top-header{
-    background:black;
-    color:white;
-    display:flex;
-    justify-content:space-between;
-    padding:8px 25px;
-    font-size:14px;
-}
-
-.top-header a{
-    color:white;
-    text-decoration:none;
-}
-
-/* MAIN HEADER */
+/* HEADER */
 
 .header{
-    background:whitesmoke;
+    background:rgb(230, 228, 227);
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -47,13 +36,16 @@ body{
     color:purple;
     font-size:30px;
     font-weight:bold;
+    transition:0.3s;
 }
  
-.header .logo:hover {
-      background-color: black;
-     color:white; 
-      border-radius: 5px;
-    }
+.header .logo:hover{
+    background-color:black;
+    color:white; 
+    border-radius:5px;
+    padding:5px 10px;
+}
+
 .header-right a{
     text-decoration:none;
     color:black;
@@ -69,142 +61,58 @@ body{
     color:white;
 }
 
-/* CATEGORY BAR */
+/* LOGIN BOX */
 
-.categorybar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgb(90, 26, 90);
-    padding:12px 25px;
+.login-container{
+    width:400px;
+    margin:60px auto;
 }
 
-.category-left{
-    display:flex;
-    gap:22px;
-}
-
-.category-left a{
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-    transition:0.3s;
-}
-
-.category-left a:hover{
-    color:rgb(180,180,93);
-    transform:scale(1.1);
-}
-
-.searchbar{
-    display:flex;
-}
-
-.searchbar input{
-    padding:8px;
+.card{
     border:none;
-    outline:none;
-    border-radius:5px 0 0 5px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    padding:20px;
 }
 
-.searchbar button{
-    padding:8px 15px;
-    border:none;
-    background:rgb(180,180,93);
-    color:white;
-    border-radius:0 5px 5px 0;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.searchbar button:hover{
-    background:white;
-    color:purple;
-}
-
-/* LOGIN FORM */
-
-.form-container{
-    width:420px;
-    background:white;
-    margin:70px auto;
-    padding:35px;
-    border-radius:18px;
-    box-shadow:0 0 18px rgba(0,0,0,0.15);
-    border-top:6px solid purple;
-}
-
-.form-container h2{
+.card-title{
     text-align:center;
-    margin-bottom:25px;
-    color:black;
-    font-size:32px;
-}
-
-/* INPUTS */
-
-.input-box{
-    margin-bottom:18px;
-}
-
-.input-box label{
-    display:block;
-    margin-bottom:8px;
+    font-size:30px;
     font-weight:bold;
-    color:black;
+    color:purple;
+    margin-bottom:25px;
 }
 
-.input-box input{
-    width:100%;
+.form-control{
+    border-radius:10px;
     padding:12px;
-    border:1px solid lightgray;
-    border-radius:8px;
-    outline:none;
-    font-size:15px;
-    box-sizing:border-box;
-    transition:0.3s;
 }
 
-.input-box input:focus{
-    border-color:black;
-    transform:scale(1.02);
-    box-shadow:0 0 8px rgba(128,0,128,0.2);
-}
-
-/* BUTTON */
-
-.login-btn{
+.btn-login{
     width:100%;
-    padding:12px;
-    border:none;
-    background:rgb(90, 26, 90);
+    background:purple;
     color:white;
-    font-size:17px;
-    border-radius:8px;
-    cursor:pointer;
+    border:none;
+    padding:12px;
+    border-radius:10px;
+    font-size:18px;
     transition:0.3s;
 }
 
-.login-btn:hover{
+.btn-login:hover{
     background:black;
-     color:white;
-    transform:scale(1.03);
 }
-
-
-/* EXTRA LINKS */
 
 .extra-links{
     display:flex;
     justify-content:space-between;
     margin-top:15px;
-    font-size:10px;
+    font-size:14px;
 }
 
 .extra-links a{
     color:maroon;
     text-decoration:none;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight:bold;
 }
 
@@ -212,59 +120,22 @@ body{
     color:black;
 }
 
-/* DIVIDER */
-
-.divider{
-    display:flex;
-    align-items:center;
-    margin:25px 0;
-}
-
-.divider::before,
-.divider::after{
-    content:"";
-    flex:1;
-    height:1px;
-    background:lightgray;
-}
-
-.divider span{
-    margin:0 10px;
-    color:gray;
-}
-
-/* SOCIAL LOGIN */
-
 .social-login{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
+    text-align:center;
+    margin-top:20px;
 }
 
-.social-btn{
-    width:100%;
-    padding:12px;
-    border:1px solid lightgray;
-    border-radius:8px;
-    background:white;
+.social-login i{
+    font-size:22px;
+    color: black;
+    margin:10px;
     cursor:pointer;
-    display:flex;
-    align-items:center;
-    gap:18px;
-    font-size:15px;
     transition:0.3s;
 }
 
-.social-btn:hover{
-    background:whitesmoke;
-    transform:scale(1.03);
-    border-color:black;
-}
-
-.social-btn i{
-    margin-left:10px;
-    font-size:18px;
-    color:black;
+.social-login i:hover{
+    transform:scale(1.2);
+    color:purple;
 }
 
 </style>
@@ -272,25 +143,7 @@ body{
 
 <body>
 
-<!-- TOP HEADER -->
-
-<div class="top-header">
-
-    <div>
-        <a href="#">Track your order</a>
-    </div>
-
-    <div>
-        <a href="#">Call +12345 879 541</a>
-    </div>
-
-    <div>
-        ENG | USD
-    </div>
-
-</div>
-
-<!-- MAIN HEADER -->
+<!-- HEADER -->
 
 <div class="header">
 
@@ -303,81 +156,71 @@ body{
 
 </div>
 
-<!-- CATEGORY BAR -->
-
-<div class="categorybar">
-
-    <div class="category-left">
-        <a href="#">Skincare</a>
-        <a href="#">Makeup</a>
-        <a href="#">Haircare</a>
-        <a href="#">Fragrance</a>
-        <a href="#New Arrivals">New Arrivals</a>
-    <a href="#Offers">Offers</a>
-    </div>
-
-    <div class="searchbar">
-        <input type="text" placeholder="Search here...">
-        <button>Search</button>
-    </div>
-
-</div>
-
 <!-- LOGIN FORM -->
 
-<div class="form-container">
+<div class="container login-container">
 
-    <h2>Login Form</h2>
+<div class="card">
 
-    <form>
+<h2 class="card-title">Login</h2>
 
-        <div class="input-box">
-            <label>Email</label>
-            <input type="email" placeholder="Enter your email">
-        </div>
+<form>
 
-        <div class="input-box">
-            <label>Password</label>
-            <input type="password" placeholder="Enter your password">
-        </div>
+  <div class="mb-3">
+    <label class="form-label">Email address</label>
 
-        <button class="login-btn">
-            Login
-        </button>
+    <input type="email"
+    class="form-control"
+    placeholder="Enter email" required>
 
-    </form>
-
-    <div class="extra-links">
-        <a href="#">Forgot Password?</a>
-        <a href="#">Create Account</a>
+    <div class="form-text">
+      We'll never share your email with anyone else.
     </div>
+  </div>
 
-    <div class="divider">
-        <span>OR</span>
-    </div>
+  <div class="mb-3">
+    <label class="form-label">Password</label>
 
-    <!-- SOCIAL LOGIN -->
+    <input type="password"
+    class="form-control"
+    placeholder="Password" required>
+  </div>
 
-    <div class="social-login">
+  <div class="mb-3 form-check">
+    <input type="checkbox"
+    class="form-check-input"
+    id="check1" required>
 
-        <button class="social-btn">
-            <i class="fa-brands fa-google"></i>
-            Login with Google
-        </button>
+    <label class="form-check-label" for="check1">
+      Remember Me
+    </label>
+  </div>
 
-        <button class="social-btn">
-            <i class="fa-brands fa-apple"></i>
-            Login with Apple ID
-        </button>
+  <button type="submit" class="btn btn-login">
+    Login
+  </button>
 
-        <button class="social-btn">
-            <i class="fa-brands fa-facebook-f"></i>
-            Login with Facebook
-        </button>
+</form>
 
-    </div>
+<div class="extra-links">
+    <a href="#">Forgot Password?</a>
+    <a href="#">Create Account</a>
+</div>
+
+<div class="social-login">
+
+<p>Or Login With</p>
+
+<i class="fab fa-google"></i>
+<i class="fab fa-facebook"></i>
+<i class="fab fa-instagram"></i>
 
 </div>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
