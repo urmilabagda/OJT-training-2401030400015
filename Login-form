@@ -12,6 +12,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
 rel="stylesheet">
+<!--icon link-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 <style>
 
@@ -166,25 +168,22 @@ body{
 
 <form>
 
-  <div class="mb-3">
-    <label class="form-label">Email address</label>
-
-    <input type="email"
-    class="form-control"
-    placeholder="Enter email" required>
-
-    <div class="form-text">
-      We'll never share your email with anyone else.
+    <div class="input-group mb-3">
+      <span class="input-group-text">
+        <i class="bi bi-person-fill" style="color:purple"></i>
+      </span>
+      <input type="email" class="form-control"
+        placeholder="Email">
     </div>
-  </div>
 
-  <div class="mb-3">
-    <label class="form-label">Password</label>
 
-    <input type="password"
-    class="form-control"
-    placeholder="Password" required>
-  </div>
+  <div class="input-group mb-3">
+      <span class="input-group-text">
+        <i class="bi bi-lock-fill" style="color:purple"></i>
+      </span>
+      <input type="password" class="form-control"
+        placeholder="Password">
+    </div>
 
   <div class="mb-3 form-check">
     <input type="checkbox"
