@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Checkout Page</title>
+
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+    body{
+      background-color:whitesmoke;
+      font-family:Arial, Helvetica, sans-serif;
+      padding:30px;
+    }
+
+    /* ================= CHECKOUT PAGE ================= */
+
+    .checkout-container{
+      display:flex;
+      flex-direction:column;
+      gap:25px;
+    }
+
+    /* CHECKOUT HEADING */
+
+    .checkout-heading{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      color:rgb(26, 14, 26);
+      margin-bottom:25px;
+    }
+
+    .back-arrow{
+      width:35px;
+      height:35px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:black;
+      border-radius:50%;
+      text-decoration:none;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    .back-arrow:hover{
+      background-color:rgb(229, 221, 221);
+      transform:scale(1.1);
+    }
+
+    /* CARD */
+
+    .checkout-card{
+      background:white;
+      padding:30px;
+      border-radius:15px;
+      box-shadow:0px 0px 12px lightgray;
+    }
+
+    /* SECTION TITLE */
+
+    .section-title{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      margin-bottom:25px;
+    }
+
+    .section-title i{
+      background-color:purple;
+      color:white;
+      padding:12px;
+      border-radius:50%;
+      font-size:18px;
+    }
+
+    .section-title h2{
+      color:purple;
+      margin:0;
+      font-size:28px;
+    }
+
+    /* SHIPPING DESIGN */
+
+    .shipping-card{
+      background:linear-gradient(to right, rgb(247,247,247), white);
+    }
+
+    .shipping-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .full-width{
+      grid-column:1/3;
+    }
+
+    /* FORM */
+
+    .form-group label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:bold;
+    }
+
+    .form-group input{
+      width:100%;
+      padding:10px;
+      border:1px solid lightgray;
+      border-radius:8px;
+      outline:none;
+      font-size:14px;
+    }
+
+    .form-group input:focus{
+      border:1px solid purple;
+    }
+
+    /* PAYMENT */
+
+    .payment-option{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding:15px;
+      border:1px solid lightgray;
+      border-radius:10px;
+      margin-bottom:15px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .payment-option:hover{
+      background-color:whitesmoke;
+      border-color:purple;
+    }
+
+    /* PRODUCT */
+
+    .product-row{
+      display:flex;
+      align-items:center;
+      gap:20px;
+      margin-bottom:20px;
+    }
+
+    .product-row img{
+      width:100px;
+      height:100px;
+      border-radius:12px;
+      object-fit:cover;
+    }
+
+    .product-info h3{
+      margin:0;
+    }
+
+    .product-info p{
+      color:gray;
+      margin:8px 0;
+    }
+
+    .product-info span{
+      color:purple;
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    /* SUMMARY */
+
+    .summary-row{
+      display:flex;
+      justify-content:space-between;
+      margin:18px 0;
+      font-size:16px;
+    }
+
+    .total{
+      font-size:20px;
+      font-weight:bold;
+      color:purple;
+    }
+
+    /* BUTTON */
+
+    .place-order-btn{
+      width:100%;
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      background-image:linear-gradient(to right , rgb(113,37,134), rgb(211,211,202));
+      color:white;
+      font-size:17px;
+      cursor:pointer;
+      margin-top:20px;
+      transition:0.3s;
+    }
+
+    .place-order-btn:hover{
+      transform:scale(1.03);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .shipping-grid{
+        grid-template-columns:1fr;
+      }
+
+      .full-width{
+        grid-column:1/2;
+      }
+
+      body{
+        padding:15px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= CHECKOUT HEADING ================= -->
+
+  <header>
+
+    <h1 class="checkout-heading">
+
+      <a href="#" class="back-arrow">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+
+      Checkout
+
+    </h1>
+
+  </header>
+
+  <!-- ================= CHECKOUT PAGE ================= -->
+
+  <div class="container-fluid">
+
+    <div class="profile-content">
+
+      <div class="checkout-container">
+
+        <!-- ================= SHIPPING SECTION ================= -->
+
+        <div class="checkout-card shipping-card">
+
+          <div class="section-title">
+
+            <i class="fa fa-truck-fast"></i>
+
+            <h2>Shipping Information</h2>
+
+          </div>
+
+          <div class="shipping-grid">
+
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="text" placeholder="Enter phone number">
+            </div>
+
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="Enter your email">
+            </div>
+
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" placeholder="Enter city">
+            </div>
+
+            <div class="form-group full-width">
+              <label>Home Address</label>
+              <input type="text" placeholder="Enter full address">
+            </div>
+
+            <div class="form-group">
+              <label>State</label>
+              <input type="text" placeholder="Enter state">
+            </div>
+
+            <div class="form-group">
+              <label>Pincode</label>
+              <input type="text" placeholder="Enter pincode">
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= PAYMENT SECTION ================= -->
+
+        <div class="checkout-card">
+
+          <div class="section-title">
+
+            <i class="fa fa-credit-card"></i>
+
+            <h2>Payment Method</h2>
+
+          </div>
+
+          <div class="payment-option">
+            <input type="radio" name="payment">
+            <label>UPI Payment</label>
+          </div>
+
+          <div class="payment-option">
+            <input type="radio" name="payment">
+            <label>Credit / Debit Card</label>
+          </div>
+
+          <div class="payment-option">
+            <input type="radio" name="payment">
+            <label>Cash On Delivery</label>
+          </div>
+
+        </div>
+
+        <!-- ================= ORDER SECTION ================= -->
+
+        <div class="checkout-card">
+
+          <div class="section-title">
+
+            <i class="fa fa-bag-shopping"></i>
+
+            <h2>Place Your Order</h2>
+
+          </div>
+
+          <div class="product-row">
+
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=400&auto=format&fit=crop">
+
+            <div class="product-info">
+
+              <h3>Lumira Glow Face Wash</h3>
+
+              <p>Quantity : 2</p>
+
+              <span>₹900</span>
+
+            </div>
+
+          </div>
+
+          <hr>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>₹900</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Shipping Charge</span>
+            <span>₹200</span>
+          </div>
+
+          <div class="summary-row total">
+            <span>Total Amount</span>
+            <span>₹1100</span>
+          </div>
+
+          <button class="place-order-btn">
+            Place Order
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOOTSTRAP JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
