@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lumira Contact Page</title>
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:whitesmoke;
+}
+
+/* TOP HEADER */
+
+.top-header{
+    display:flex;
+    background:black;
+    align-items:center;
+    padding:8px 20px;
+}
+
+.top-header .left{
+    flex:1;
+    text-align:left;
+}
+
+.top-header .center{
+    flex:1;
+    text-align:center;
+}
+
+.top-header .right{
+    flex:1;
+    text-align:right;
+    color:white;
+    font-size:14px;
+}
+
+.top-header a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+/* MAIN HEADER */
+
+.header{
+    background-color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 35px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+    color:purple;
+    font-size:36px;
+    font-weight:bold;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.logo:hover{
+    background:black;
+    color:white;
+    padding:8px 15px;
+    border-radius:6px;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.header-right a{
+    text-decoration:none;
+    color:black;
+    font-size:16px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.header-right a:hover{
+    color:purple;
+    transform:scale(1.1);
+}
+
+.header-right a.active{
+    color:purple;
+    border-bottom:2px solid purple;
+    padding-bottom:4px;
+}
+
+.header-right i{
+    font-size:19px;
+}
+
+.header-right i:hover{
+    color:red;
+}
+
+/* HERO */
+
+.contact-hero{
+    text-align:center;
+    padding:80px 20px 60px;
+}
+
+.contact-hero h1{
+    font-size:60px;
+    margin-bottom:15px;
+    color:purple;
+}
+
+.contact-hero p{
+    color:gray;
+    font-size:20px;
+}
+
+/* CONTACT SECTION */
+
+.contact-section{
+    width:90%;
+    max-width:1200px;
+    margin:0 auto 90px;
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+/* LEFT CONTACT INFO */
+
+.contact-info{
+    flex:1;
+    min-width:300px;
+}
+
+.info-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    margin-bottom:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.12);
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    transition:0.3s;
+}
+
+.info-card:hover{
+    transform:translateY(-6px);
+}
+
+.info-card i{
+    width:70px;
+    height:70px;
+    background:purple;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+}
+
+.info-text h2{
+    margin-top:0;
+    margin-bottom:10px;
+}
+
+.info-text p{
+    color:gray;
+    line-height:1.8;
+}
+
+/* CONTACT FORM */
+
+.contact-form{
+    flex:1;
+    min-width:320px;
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 5px 18px rgba(0,0,0,0.12);
+}
+
+.contact-form h1{
+    margin-top:0;
+    margin-bottom:35px;
+    color:purple;
+}
+
+/* INPUTS */
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+.input-group input,
+.input-group textarea{
+    width:100%;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    outline:none;
+    font-size:15px;
+    box-sizing:border-box;
+}
+
+.input-group textarea{
+    resize:none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+    border:1px solid purple;
+}
+
+/* BUTTON */
+
+.send-btn{
+    width:100%;
+    border:none;
+    background:purple;
+    color:white;
+    padding:16px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.send-btn:hover{
+    background:black;
+}
+
+/* SOCIAL */
+
+.social-section{
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.social-section h1{
+    font-size:45px;
+    margin-bottom:30px;
+    color:purple;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+
+.social-icons a{
+    width:65px;
+    height:65px;
+    background:purple;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    transition:0.3s;
+    text-decoration:none;
+}
+
+.social-icons a:hover{
+    background:black;
+    transform:translateY(-8px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .header-right{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .contact-hero h1{
+        font-size:42px;
+    }
+
+    .contact-hero p{
+        font-size:16px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- TOP HEADER -->
+
+<div class="top-header">
+
+    <div class="left">
+        <a href="#">Track your order</a>
+    </div>
+
+    <div class="center">
+        <a href="tel:+12345879541">Call +12345 879 541</a>
+    </div>
+
+    <div class="right">
+        ENG | USD
+    </div>
+
+</div>
+
+<!-- HEADER -->
+
+<div class="header">
+
+    <a href="#" class="logo">
+        Lumira
+    </a>
+
+    <div class="header-right">
+
+        <a href="#">Home</a>
+
+        <a href="#">About Us</a>
+
+        <a href="#">Help</a>
+
+        <a href="#" class="active">
+            Contact
+        </a>
+
+        <a href="#">
+            <i class="fa fa-user"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa fa-heart"></i>
+        </a>
+
+        <a href="#">
+            <i class="fa fa-shopping-bag"></i>
+        </a>
+
+    </div>
+
+</div>
+
+<!-- HERO -->
+
+<div class="contact-hero">
+
+    <h1>Contact Support</h1>
+
+    <p>
+        We’d love to hear from you. Get in touch with Lumira anytime.
+    </p>
+
+</div>
+
+<!-- CONTACT SECTION -->
+
+<div class="contact-section container-fluid">
+
+    <!-- LEFT INFO -->
+
+    <div class="contact-info">
+
+        <!-- ADDRESS -->
+
+        <div class="info-card">
+
+            <i class="fa fa-location-dot"></i>
+
+            <div class="info-text">
+
+                <h2>Our Address</h2>
+
+                <p>
+                    Lumira Beauty Studio<br>
+                    Ahmedabad, Gujarat, India
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- PHONE -->
+
+        <div class="info-card">
+
+            <i class="fa fa-phone"></i>
+
+            <div class="info-text">
+
+                <h2>Phone Number</h2>
+
+                <p>
+                    +91 9876543210<br>
+                    +91 9999999999
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="info-card">
+
+            <i class="fa fa-envelope"></i>
+
+            <div class="info-text">
+
+                <h2>Email Address</h2>
+
+                <p>
+                    support@lumira.com<br>
+                    help@lumira.com
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- HOURS -->
+
+        <div class="info-card">
+
+            <i class="fa fa-clock"></i>
+
+            <div class="info-text">
+
+                <h2>Working Hours</h2>
+
+                <p>
+                    Monday - Saturday<br>
+                    9:00 AM - 9:00 PM
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT FORM -->
+
+    <div class="contact-form">
+
+        <h1>Send Message</h1>
+
+        <!-- NAME -->
+
+        <div class="input-group">
+
+            <label>Full Name</label>
+
+            <input type="text"
+            placeholder="Enter your name">
+
+        </div>
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+            <label>Email Address</label>
+
+            <input type="email"
+            placeholder="Enter your email">
+
+        </div>
+
+        <!-- PHONE -->
+
+        <div class="input-group">
+
+            <label>Phone Number</label>
+
+            <input type="text"
+            placeholder="Enter phone number">
+
+        </div>
+
+        <!-- MESSAGE -->
+
+        <div class="input-group">
+
+            <label>Your Message</label>
+
+            <textarea rows="6"
+            placeholder="Write your message here..."></textarea>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button class="send-btn">
+
+            Send Message
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- SOCIAL -->
+
+<div class="social-section">
+
+    <h1>Follow Lumira</h1>
+
+    <div class="social-icons">
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+
+    </div>
+
+</div>
+
+<!-- BOOTSTRAP JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
