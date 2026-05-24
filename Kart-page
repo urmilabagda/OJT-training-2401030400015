@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Lumira Shopping Bag</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+    body {
+      margin: 0;
+      background-color: whitesmoke;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ================= TOP HEADER ================= */
+
+    .top-header {
+      display: flex;
+      background-color: black;
+      align-items: center;
+      padding: 6px 15px;
+    }
+
+    .left {
+      flex: 1;
+      color: white;
+      text-align: left;
+    }
+
+    .center {
+      flex: 1;
+      color: white;
+      text-align: center;
+    }
+
+    .right {
+      flex: 1;
+      color: white;
+      text-align: right;
+    }
+
+    .top-header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* ================= MAIN HEADER ================= */
+
+    .header {
+      background-color: whitesmoke;
+      overflow: hidden;
+      padding: 9px 12px;
+    }
+
+    .header .logo {
+      color: purple;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      float: left;
+      padding: 12px 15px;
+      display: block;
+    }
+
+    .header .logo:hover {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .header-right {
+      float: right;
+    }
+
+    .header-right a {
+      display: inline-block;
+      color: black;
+      text-align: center;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .header-right a:hover {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .header-right a.active {
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    /* ================= CATEGORY BAR ================= */
+
+    .categorybar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: rgb(90, 26, 90);
+      padding: 7px 20px;
+    }
+
+    .categorybar .left {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .categorybar .left a {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.2s;
+    }
+
+    .categorybar .left a:hover {
+      color: rgb(177, 177, 57);
+      transform: scale(1.2);
+    }
+
+    .categorybar .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .searchbar {
+      display: flex;
+    }
+
+    .searchbar input {
+      padding: 6px;
+      border: 1px solid lightgray;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+
+    .searchbar button {
+      padding: 6px 12px;
+      border: none;
+      background-color: rgb(180, 180, 93);
+      color: white;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+    .searchbar button:hover {
+      background-color: white;
+      color: purple;
+    }
+
+    .categorybar .right {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 0;
+    }
+
+    .categorybar .right a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .categorybar .right a:hover {
+      color: red;
+      transform: scale(1.2);
+    }
+
+    .categorybar .right .active-icon {
+      color: red;
+      padding: 10px;
+      border-radius: 50%;
+    }
+
+    .categorybar .right .active-icon:hover {
+      color: white;
+    }
+
+    /* ================= SHOPPING BAG ================= */
+
+    .bag-container {
+      width: 92%;
+      margin: 40px auto;
+    }
+
+    .product-card {
+      display: flex;
+      align-items: center;
+      background: white;
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0px 5px 20px rgba(0,0,0,0.12);
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 8px 25px rgba(128,0,128,0.25);
+    }
+
+    .product-card img {
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-right: 25px;
+    }
+
+    .product-details {
+      flex: 1;
+    }
+
+    .product-details h2 {
+      margin: 0;
+      color: purple;
+      font-size: 28px;
+    }
+
+    .product-details p {
+      color: gray;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .price {
+      color: black;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* BUTTONS */
+
+    .product-buttons {
+      margin-top: 15px;
+    }
+
+    .buy-btn {
+      background: purple;
+      color: white;
+    }
+
+    .buy-btn:hover {
+      background: black;
+      color: white;
+    }
+
+    .remove-btn {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .remove-btn:hover {
+      background: red;
+      color: white;
+    }
+
+    /* ================= BILL SECTION ================= */
+
+    .bill-section {
+      background: white;
+      margin-top: 35px;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0px 5px 20px rgba(0,0,0,0.12);
+    }
+
+    .bill-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 15px 0;
+      font-size: 20px;
+    }
+
+    .discount {
+      color: green;
+      font-weight: bold;
+    }
+
+    .final-total {
+      color: purple;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .wishlist-icon {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: whitesmoke;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .wishlist-icon:hover {
+      transform: scale(1.1);
+      color: red;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ================= TOP HEADER ================= -->
+
+  <header>
+
+    <div class="top-header">
+
+      <div class="left">
+        <a href="#">Track your order</a>
+      </div>
+
+      <div class="center">
+        <a href="tel:+12345879541">Call +12345 879 541</a>
+      </div>
+
+      <div class="right">
+
+        <!-- Bootstrap Dropdown -->
+
+        <div class="dropdown d-inline">
+
+          <button class="btn btn-sm btn-light dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown">
+
+            ENG | INR
+
+          </button>
+
+          <ul class="dropdown-menu">
+
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Hindi</a></li>
+            <li><a class="dropdown-item" href="#">Gujarati</a></li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- ================= MAIN HEADER ================= -->
+
+  <div class="header clearfix">
+
+    <a href="#" class="logo">Lumira</a>
+
+    <div class="header-right">
+
+      <!-- Bootstrap Button -->
+
+      <a class="active btn btn-dark btn-sm" href="#">Login</a>
+
+      <a href="#" class="btn btn-outline-dark btn-sm">Register</a>
+
+      <a href="#" class="btn btn-outline-dark btn-sm">Help</a>
+
+    </div>
+
+  </div>
+
+  <!-- ================= CATEGORY BAR ================= -->
+
+  <div class="categorybar">
+
+    <div class="left">
+      <a href="All">All</a>
+      <a href="#">Skincare</a>
+      <a href="#">Makeup</a>
+      <a href="#">Haircare</a>
+      <a href="#">Fragrance</a>
+      <a href="#">Trialkit</a>
+      <a href="#">Offers</a>
+    </div>
+
+    <div class="center">
+
+      <!-- Bootstrap Input Group -->
+
+      <div class="searchbar input-group w-75">
+
+        <input type="text"
+          class="form-control"
+          placeholder="Search here....">
+
+        <button class="btn btn-warning text-white">
+          Search
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="right">
+
+      <a href="#">
+        <i class="fa fa-user"></i>
+      </a>
+
+      <a href="#">
+        <i class="fa fa-heart"></i>
+      </a>
+
+      <a href="#bag" class="active-icon">
+        <i class="fa fa-shopping-bag"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- ================= SHOPPING BAG ================= -->
+
+  <div class="bag-container container-fluid">
+
+    <!-- Product 1 -->
+
+    <div class="product-card">
+
+      <div class="wishlist-icon">
+        <i class="fa fa-heart"></i>
+      </div>
+
+      <img src="https://copilot.microsoft.com/th/id/BCO.761acf60-8b77-4f5b-9b0e-a6590a8f3b13.png"
+        alt="foundation"
+        class="img-fluid">
+
+      <div class="product-details">
+
+        <h2>Foundation</h2>
+
+        <p>Glow & Hydration Beauty Product</p>
+
+        <p class="price">₹799</p>
+
+        <div class="product-buttons">
+
+          <button class="buy-btn btn">
+            Buy Now
+          </button>
+
+          <button class="remove-btn btn">
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Product 2 -->
+
+    <div class="product-card">
+
+      <div class="wishlist-icon">
+        <i class="fa fa-heart"></i>
+      </div>
+
+      <img src="https://copilot.microsoft.com/th/id/BCO.1fa63496-6e78-4bf5-ac79-742adba6dc3f.png"
+        alt="face-serum"
+        class="img-fluid">
+
+      <div class="product-details">
+
+        <h2>Face Serum</h2>
+
+        <p>Vitamin C Brightening Serum</p>
+
+        <p class="price">₹999</p>
+
+        <div class="product-buttons">
+
+          <button class="buy-btn btn">
+            Buy Now
+          </button>
+
+          <button class="remove-btn btn">
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Product 3 -->
+
+    <div class="product-card">
+
+      <div class="wishlist-icon">
+        <i class="fa fa-heart"></i>
+      </div>
+
+      <img src="https://copilot.microsoft.com/th/id/BCO.291eac31-9324-405c-a957-299835e4c341.png"
+        alt="facewash"
+        class="img-fluid">
+
+      <div class="product-details">
+
+        <h2>Face Wash</h2>
+
+        <p>Fresh & Soft Daily Cleanser</p>
+
+        <p class="price">₹499</p>
+
+        <div class="product-buttons">
+
+          <button class="buy-btn btn">
+            Buy Now
+          </button>
+
+          <button class="remove-btn btn">
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Product 4 -->
+
+    <div class="product-card">
+
+      <div class="wishlist-icon">
+        <i class="fa fa-heart"></i>
+      </div>
+
+      <img src="https://copilot.microsoft.com/th/id/BCO.421fef7f-0439-4c51-bed2-71b7387a4fa1.png"
+        alt="Hair Oil"
+        class="img-fluid">
+
+      <div class="product-details">
+
+        <h2>Hair Oil</h2>
+
+        <p>Natural Herbal Hair Oil</p>
+
+        <p class="price">₹699</p>
+
+        <div class="product-buttons">
+
+          <button class="buy-btn btn">
+            Buy Now
+          </button>
+
+          <button class="remove-btn btn">
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= BILL SECTION ================= -->
+
+    <div class="bill-section">
+
+      <div class="bill-row">
+        <span>Total Price</span>
+        <span>₹2996</span>
+      </div>
+
+      <div class="bill-row">
+        <span>Discount</span>
+        <span class="discount">- ₹500</span>
+      </div>
+
+      <hr>
+
+      <div class="bill-row final-total">
+        <span>Final Total</span>
+        <span>₹2496</span>
+      </div>
+
+      <!-- Bootstrap Checkout Button -->
+
+      <div class="text-end mt-4">
+
+        <button class="btn btn-dark btn-lg">
+          Proceed To Checkout
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
