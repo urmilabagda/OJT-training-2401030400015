@@ -6,7 +6,14 @@
 
 <title>Lumira Registration Form</title>
 
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!--icon list-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 <style>
 
@@ -21,9 +28,6 @@ body{
 .top-header{
     background:black;
     color:white;
-    display:flex;
-    justify-content:space-between;
-    padding:8px 25px;
     font-size:14px;
 }
 
@@ -36,10 +40,6 @@ body{
 
 .header{
     background:whitesmoke;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 30px;
     border-bottom:1px solid lightgray;
 }
 
@@ -47,19 +47,19 @@ body{
     color:purple;
     font-size:30px;
     font-weight:bold;
+    transition:0.3s;
 }
 
-.header .logo:hover{
+.logo:hover{
     background:black;
     color:white;
     border-radius:5px;
-    
+    padding:5px 10px;
 }
 
 .header-right a{
     text-decoration:none;
     color:black;
-    margin-left:20px;
     font-size:15px;
     transition:0.3s;
     padding:8px 12px;
@@ -71,100 +71,31 @@ body{
     color:white;
 }
 
-/* CATEGORY BAR */
 
-.categorybar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:rgb(90, 26, 90);
-    padding:12px 25px;
-}
-
-.category-left{
-    display:flex;
-    gap:22px;
-}
-
-.category-left a{
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-    transition:0.3s;
-}
-
-.category-left a:hover{
-    color:rgb(180,180,93);
-    transform:scale(1.1);
-}
-
-.searchbar{
-    display:flex;
-}
-
-.searchbar input{
-    padding:8px;
-    border:none;
-    outline:none;
-    border-radius:5px 0 0 5px;
-}
-
-.searchbar button{
-    padding:8px 15px;
-    border:none;
-    background:rgb(180,180,93);
-    color:white;
-    border-radius:0 5px 5px 0;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.searchbar button:hover{
-    background:white;
-    color:purple;
-}
 
 /* FORM */
 
 .form-container{
-    width:420px;
     background:white;
-    margin:60px auto;
-    padding:35px;
     border-radius:18px;
     box-shadow:0 0 18px rgba(0,0,0,0.15);
     border-top:6px solid purple;
 }
 
 .form-container h2{
-    text-align:center;
-    margin-bottom:25px;
     color:black;
     font-size:32px;
 }
 
 /* INPUTS */
 
-.input-box{
-    margin-bottom:18px;
-}
-
 .input-box label{
-    display:block;
-    margin-bottom:8px;
     font-weight:bold;
     color:black;
 }
 
 .input-box input,
 .input-box select{
-    width:100%;
-    padding:12px;
-    border:1px solid lightgray;
-    border-radius:8px;
-    outline:none;
-    font-size:15px;
-    box-sizing:border-box;
     transition:0.3s;
 }
 
@@ -178,14 +109,9 @@ body{
 /* BUTTON */
 
 .register-btn{
-    width:100%;
-    padding:12px;
-    border:none;
     background:rgb(90, 26, 90);
     color:white;
     font-size:17px;
-    border-radius:8px;
-    cursor:pointer;
     transition:0.3s;
 }
 
@@ -200,7 +126,6 @@ body{
 .divider{
     display:flex;
     align-items:center;
-    margin:25px 0;
 }
 
 .divider::before,
@@ -218,23 +143,9 @@ body{
 
 /* SOCIAL LOGIN */
 
-.social-login{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
-}
-
 .social-btn{
-    width:100%;
-    padding:12px;
     border:1px solid lightgray;
-    border-radius:8px;
     background:white;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    gap:18px;
-    font-size:15px;
     transition:0.3s;
 }
 
@@ -245,18 +156,11 @@ body{
 }
 
 .social-btn i{
-    margin-left:10px;
     font-size:18px;
     color:black;
 }
 
 /* BOTTOM TEXT */
-
-.bottom-text{
-    text-align:center;
-    margin-top:20px;
-    font-size:14px;
-}
 
 .bottom-text a{
     color:maroon;
@@ -275,131 +179,177 @@ body{
 
 <!-- TOP HEADER -->
 
-<div class="top-header">
+<div class="top-header py-2">
+    <div class="container-fluid">
+        <div class="row text-center text-md-start">
 
-    <div>
-        <a href="#">Track your order</a>
+            <div class="col-md-4 mb-1 mb-md-0">
+                <a href="#">Track your order</a>
+            </div>
+
+            <div class="col-md-4 mb-1 mb-md-0 text-md-center">
+                <a href="#">Call +12345 879 541</a>
+            </div>
+
+            <div class="col-md-4 text-md-end">
+                ENG | USD
+            </div>
+
+        </div>
     </div>
-
-    <div>
-        <a href="#">Call +12345 879 541</a>
-    </div>
-
-    <div>
-        ENG | USD
-    </div>
-
 </div>
 
 <!-- MAIN HEADER -->
 
-<div class="header">
+<div class="header py-3">
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between align-items-center">
 
-    <div class="logo">Lumira</div>
+            <div class="logo">
+                Lumira
+            </div>
 
-    <div class="header-right">
-        <a href="#">Login</a>
-        <a href="#">Help</a>
+            <div class="header-right d-flex gap-2">
+                <a href="#">Login</a>
+                <a href="#">Help</a>
+            </div>
+
+        </div>
     </div>
-
 </div>
 
-<!-- CATEGORY BAR -->
 
-<div class="categorybar">
-
-    <div class="category-left">
-        <a href="#">Skincare</a>
-        <a href="#">Makeup</a>
-        <a href="#">Haircare</a>
-        <a href="#">Fragrance</a>
-        <a href="#">New Arrivals</a>
-        <a href="#">Offers</a>
-    </div>
-
-    <div class="searchbar">
-        <input type="text" placeholder="Search here...">
-        <button>Search</button>
-    </div>
-
-</div>
 
 <!-- REGISTRATION FORM -->
 
-<div class="form-container">
+<div class="container my-5">
 
-    <h2>Create Account</h2>
+    <div class="form-container col-lg-5 col-md-7 col-sm-10 mx-auto p-4 p-md-5">
 
-    <form>
+        <h2 class="text-center mb-4">
+            Create Account
+        </h2>
 
-        <div class="input-box">
-            <label>Full Name</label>
-            <input type="text" placeholder="Enter your full name" required>
-        </div>
+        <form>
 
-        <div class="input-box">
-            <label>Email</label>
-            <input type="email" placeholder="Enter your email" required>
-        </div>
-
-        <div class="input-box">
-            <label>Password</label>
-            <input type="password" placeholder="Create password" required>
-        </div>
-
-        <div class="input-box">
-            <label>Gender</label>
-
-            <select required>
-                <option value="">Select Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-            </select>
-        </div>
-
-        <div class="input-box">
-            <label>Mobile Number</label>
-            <input type="tel" placeholder="Enter mobile number" required>
-        </div>
-
-        <button class="register-btn">
-            Register
-        </button>
-
-    </form>
-
-    <div class="divider">
-        <span>OR</span>
+            
+                <div class="input-group mb-3">
+      <span class="input-group-text">
+        <i class="bi bi-person-fill" style="color:purple"></i></span>
+      <input type="text" class="form-control"
+        placeholder="Enter your full name" required>
     </div>
+                
 
-    <!-- SOCIAL LOGIN -->
+            <div class="input-group mb-3">
+        <span class="input-group-text">
+        <i class="bi bi-envelope-fill" style="color:purple"></i> </span>
+                <input type="email"
+                class="form-control"
+                placeholder="Enter your email"
+                required>
+            </div>
 
-    <div class="social-login">
+            <div class="input-group mb-3"> 
+             <span class="input-group-text">
+        <i class="bi bi-lock-fill" style="color:purple"></i></span>
+                <input type="password"
+                class="form-control"
+                placeholder="Create password"
+                required>
+            </div>
 
-        <button class="social-btn">
-            <i class="fa-brands fa-google"></i>
-            Register with Google
-        </button>
+            <div class="input-group mb-3">
+             <span class="input-group-text">
+        <i class="bi bi-gender-neuter" style="color:purple"></i></span>
+                <select class="form-select" required>
 
-        <button class="social-btn">
-            <i class="fa-brands fa-apple"></i>
-            Register with Apple ID
-        </button>
+                    <option value="">
+                        Select Gender
+                    </option>
 
-        <button class="social-btn">
-            <i class="fa-brands fa-facebook-f"></i>
-            Register with Facebook
-        </button>
+                    <option>
+                        Male
+                    </option>
 
-    </div>
+                    <option>
+                        Female
+                    </option>
 
-    <div class="bottom-text">
-        Already have an account?
-        <a href="#">Login</a>
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+            </div>
+
+            <div class="input-group mb-4">
+         <span class="input-group-text">
+        <i class="bi bi-telephone-fill" style="color:purple"></i></span>
+                <input type="tel"
+                class="form-control"
+                placeholder="Enter mobile number"
+                required>
+            </div>
+
+            <button class="btn register-btn w-100 py-2">
+                Register
+            </button>
+
+        </form>
+
+        <!-- DIVIDER -->
+
+        <div class="divider my-4">
+            <span>OR</span>
+        </div>
+
+        <!-- SOCIAL LOGIN -->
+
+        <div class="social-login d-grid gap-3">
+
+            <button class="social-btn btn d-flex align-items-center gap-3 p-3">
+
+                <i class="fa-brands fa-google ms-2"></i>
+
+                Register with Google
+            </button>
+
+            <button class="social-btn btn d-flex align-items-center gap-3 p-3">
+
+                <i class="fa-brands fa-apple ms-2"></i>
+
+                Register with Apple ID
+            </button>
+
+            <button class="social-btn btn d-flex align-items-center gap-3 p-3">
+
+                <i class="fa-brands fa-facebook-f ms-2"></i>
+
+                Register with Facebook
+            </button>
+
+        </div>
+
+        <!-- BOTTOM TEXT -->
+
+        <div class="bottom-text text-center mt-4">
+
+            Already have an account?
+
+            <a href="#">
+                Login
+            </a>
+
+        </div>
+
     </div>
 
 </div>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
