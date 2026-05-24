@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Lumira Web Page</title>
+
+  <!-- BOOTSTRAP CSS -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: whitesmoke;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ================= TOP HEADER ================= */
+
+    .top-header {
+      background-color: black;
+      color: white;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+
+    .top-header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* ================= MAIN HEADER ================= */
+
+    .main-header {
+      background-image: linear-gradient(to right, rgb(230, 224, 232), rgb(127, 73, 138));
+      padding: 12px 0;
+    }
+
+    .logo {
+      color: purple;
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .logo:hover {
+      background-color: black;
+      color: white;
+    }
+
+    .header-btn {
+      color: white;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 5px;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .header-btn:hover,
+    .header-btn.active {
+      background-color: black;
+      color: white;
+    }
+
+    /* ================= CATEGORY BAR ================= */
+
+    .categorybar {
+      background-color: rgb(90, 26, 90);
+      padding: 12px 0;
+    }
+
+    .categorybar a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .categorybar a:hover,
+    .active-category {
+      color: rgb(180, 180, 93);
+      font-weight: bold;
+    }
+
+    .search-btn {
+      background-color: rgb(180, 180, 93);
+      color: white;
+      border: none;
+    }
+
+    .search-btn:hover {
+      background-color: white;
+      color: purple;
+    }
+
+    .icon-link {
+      color: white;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .icon-link:hover {
+      color: red;
+      transform: scale(1.2);
+    }
+
+    /* ================= SIDEBAR ================= */
+
+    .sidebar {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px lightgray;
+    }
+
+    .sidebar h2 {
+      color: purple;
+      margin-bottom: 20px;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: black;
+      padding: 12px;
+      border-radius: 5px;
+      margin-bottom: 8px;
+      transition: 0.3s;
+    }
+
+    .sidebar a.active {
+      background-color: purple;
+      color: white;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      background-color: rgb(230, 230, 230);
+      color: purple;
+      padding-left: 18px;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .products h2 {
+      color: purple;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0px 0px 10px lightgray;
+      transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .price {
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .btn-custom {
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      background-image: linear-gradient(to right, rgb(113, 37, 134), rgb(211, 211, 202));
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      padding: 12px 20px;
+    }
+
+    /* ================= WISHLIST ================= */
+
+    .wishlist {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 1;
+    }
+
+    .wishlist:hover {
+      color: red;
+      transform: scale(1.1);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- TOP HEADER -->
+
+  <div class="top-header">
+
+    <div class="container">
+
+      <div class="row align-items-center text-center text-md-start">
+
+        <div class="col-md-4 mb-2 mb-md-0">
+          <a href="#">Track your order</a>
+        </div>
+
+        <div class="col-md-4 text-center mb-2 mb-md-0">
+          <a href="tel:+12345879541">Call +12345 879 541</a>
+        </div>
+
+        <div class="col-md-4 text-md-end">
+          <span>ENG | </span>
+          <span>USD</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MAIN HEADER -->
+
+  <div class="main-header">
+
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+        <a href="#" class="logo">Lumira</a>
+
+        <div class="d-flex gap-2 mt-2 mt-md-0">
+
+          <a href="#login" class="header-btn active">Login</a>
+
+          <a href="#signup" class="header-btn">Register</a>
+
+          <a href="#help" class="header-btn">Help</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- CATEGORY BAR -->
+
+  <div class="categorybar">
+
+    <div class="container">
+
+      <div class="row align-items-center gy-3">
+
+        <!-- LEFT -->
+
+        <div class="col-lg-5">
+
+          <div class="d-flex flex-wrap gap-4">
+
+            <a href="#">All</a>
+
+            <a href="#" class="active-category">Skincare</a>
+
+            <a href="#">Makeup</a>
+
+            <a href="#">Haircare</a>
+
+            <a href="#">Fragrance</a>
+
+            <a href="#">NewArivals</a>
+
+            <a href="#">Offers</a>
+
+          </div>
+
+        </div>
+
+        <!-- CENTER -->
+
+        <div class="col-lg-4">
+
+          <div class="input-group">
+
+            <input type="text" class="form-control" placeholder="Search here....">
+
+            <button class="btn search-btn">Search</button>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT -->
+
+        <div class="col-lg-3">
+
+          <div class="d-flex justify-content-lg-end gap-4">
+
+            <a href="#" class="icon-link">
+              <i class="fa fa-user"></i>
+            </a>
+
+            <a href="#" class="icon-link">
+              <i class="fa fa-heart"></i>
+            </a>
+
+            <a href="#" class="icon-link">
+              <i class="fa fa-shopping-bag"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MAIN SECTION -->
+
+  <div class="container py-4">
+
+    <div class="row g-4">
+
+      <!-- SIDEBAR -->
+
+      <div class="col-lg-3">
+
+        <div class="sidebar">
+
+          <h2>Skincare</h2>
+
+          <a href="#" class="active">Face Wash</a>
+          <a href="#">Moisturizers</a>
+          <a href="#">Serums</a>
+          <a href="#">Sunscreen</a>
+          <a href="#">Toners</a>
+          <a href="#">Face Masks</a>
+          <a href="#">Night Cream</a>
+          <a href="#">Lip Care</a>
+          <a href="#">Acne Care</a>
+          <a href="#">Eye Cream</a>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCTS -->
+
+      <div class="col-lg-9">
+
+        <div class="products">
+
+          <h2>Face Wash Products</h2>
+
+          <div class="row g-4">
+
+            <!-- PRODUCT 1 -->
+
+            <div class="col-md-6 col-lg-4">
+
+              <div class="card p-3 text-center h-100">
+
+                <div class="wishlist">
+                  <i class="fa fa-heart"></i>
+                </div>
+
+                <img src="https://copilot.microsoft.com/th/id/BCO.cf20545a-3dc3-47aa-9e01-2537b8dd228b.png"
+                  class="img-fluid w-100">
+
+                <h5 class="mt-3">Glow Face Wash</h5>
+
+                <p class="price">₹450</p>
+
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+                  <button class="btn-custom">Add to Cart</button>
+
+                  <button class="btn-custom">Buy</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- PRODUCT 2 -->
+
+            <div class="col-md-6 col-lg-4">
+
+              <div class="card p-3 text-center h-100">
+
+                <div class="wishlist">
+                  <i class="fa fa-heart"></i>
+                </div>
+
+                <img src="https://copilot.microsoft.com/th/id/BCO.291eac31-9324-405c-a957-299835e4c341.png"
+                  class="img-fluid w-100">
+
+                <h5 class="mt-3">Neem Face Wash</h5>
+
+                <p class="price">₹549</p>
+
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+                  <button class="btn-custom">Add to Cart</button>
+
+                  <button class="btn-custom">Buy</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- PRODUCT 3 -->
+
+            <div class="col-md-6 col-lg-4">
+
+              <div class="card p-3 text-center h-100">
+
+                <div class="wishlist">
+                  <i class="fa fa-heart"></i>
+                </div>
+
+                <img src="https://copilot.microsoft.com/th/id/BCO.ff5ef21a-b035-4bd7-b08c-71a0907ca694.png"
+                  class="img-fluid w-100">
+
+                <h5 class="mt-3">Hydrating Face Wash</h5>
+
+                <p class="price">₹434</p>
+
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+                  <button class="btn-custom">Add to Cart</button>
+
+                  <button class="btn-custom">Buy</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- PRODUCT 4 -->
+
+            <div class="col-md-6 col-lg-4">
+
+              <div class="card p-3 text-center h-100">
+
+                <div class="wishlist">
+                  <i class="fa fa-heart"></i>
+                </div>
+
+                <img src="https://copilot.microsoft.com/th/id/BCO.3d3929e3-05a9-4dfd-abd1-d951729dbde2.png"
+                  class="img-fluid w-100">
+
+                <h5 class="mt-3">Vitamin C Face Wash</h5>
+
+                <p class="price">₹699</p>
+
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+                  <button class="btn-custom">Add to Cart</button>
+
+                  <button class="btn-custom">Buy</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- PRODUCT 5 -->
+
+            <div class="col-md-6 col-lg-4">
+
+              <div class="card p-3 text-center h-100">
+
+                <div class="wishlist">
+                  <i class="fa fa-heart"></i>
+                </div>
+
+                <img src="https://copilot.microsoft.com/th/id/BCO.efebc3f3-d91e-4ed7-9ba1-19b329a04677.png"
+                  class="img-fluid w-100">
+
+                <h5 class="mt-3">Aloe Vera Face Wash</h5>
+
+                <p class="price">₹569</p>
+
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+                  <button class="btn-custom">Add to Cart</button>
+
+                  <button class="btn-custom">Buy</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- PRODUCT 6 -->
+
+            <div class="col-md-6 col-lg-4">
+
+              <div class="card p-3 text-center h-100">
+
+                <div class="wishlist">
+                  <i class="fa fa-heart"></i>
+                </div>
+
+                <img src="https://copilot.microsoft.com/th/id/BCO.15e7230b-d7af-453a-932e-c78e567c976f.png"
+                  class="img-fluid w-100">
+
+                <h5 class="mt-3">Charcoal Face Wash</h5>
+
+                <p class="price">₹789</p>
+
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+
+                  <button class="btn-custom">Add to Cart</button>
+
+                  <button class="btn-custom">Buy</button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOOTSTRAP JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
