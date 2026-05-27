@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Move Div Using jQuery</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+  <div class="text-center">
+
+    <!-- Parent Box -->
+    <div id="parentBox"
+         class="w-96 h-72 border-4 border-blue-600 rounded-xl bg-white p-4 mx-auto">
+
+      <h2 class="text-2xl font-bold text-blue-600 mb-4">
+        Parent Div
+      </h2>
+
+    </div>
+
+    <!-- Child Box -->
+    <div id="childBox"
+         class="w-40 h-40 bg-red-500 text-white rounded-xl flex items-center justify-center text-xl font-bold mt-6 mx-auto">
+      Child Div
+    </div>
+
+    <!-- Button -->
+    <button id="moveBtn"
+            class="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold">
+      Move Div
+    </button>
+
+  </div>
+
+  <!-- jQuery -->
+  <script>
+
+    $(document).ready(function(){
+
+      $("#moveBtn").click(function(){
+
+        // Move child div inside parent div
+        $("#childBox").appendTo("#parentBox");
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
