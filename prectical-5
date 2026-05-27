@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tailwind Flexbox Layout</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Main Container -->
+  <div class="flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-5 text-center text-2xl font-bold">
+      Flexbox Layout
+    </header>
+
+    <!-- Content Area -->
+    <div class="flex flex-1">
+
+      <!-- Sidebar -->
+      <aside class="w-1/4 bg-gray-800 text-white p-5">
+        <h2 class="text-xl font-semibold mb-4">Sidebar</h2>
+
+        <ul class="space-y-3">
+          <li class="bg-gray-700 p-2 rounded">Home</li>
+          <li class="bg-gray-700 p-2 rounded">About</li>
+          <li class="bg-gray-700 p-2 rounded">Services</li>
+          <li class="bg-gray-700 p-2 rounded">Contact</li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="flex-1 p-6">
+
+        <h1 class="text-3xl font-bold mb-4">
+          Welcome
+        </h1>
+
+        <p class="text-gray-700 mb-6">
+          This layout is created using Tailwind CSS Flexbox utilities.
+        </p>
+
+        <!-- Cards -->
+        <div class="flex gap-5 flex-wrap">
+
+          <div class="bg-white shadow-lg rounded-xl p-5 w-64">
+            <h2 class="text-xl font-semibold mb-2">Card 1</h2>
+            <p class="text-gray-600">
+              Tailwind makes flexbox layouts easy.
+            </p>
+          </div>
+
+          <div class="bg-white shadow-lg rounded-xl p-5 w-64">
+            <h2 class="text-xl font-semibold mb-2">Card 2</h2>
+            <p class="text-gray-600">
+              You can create responsive designs quickly.
+            </p>
+          </div>
+
+          <div class="bg-white shadow-lg rounded-xl p-5 w-64">
+            <h2 class="text-xl font-semibold mb-2">Card 3</h2>
+            <p class="text-gray-600">
+              Flexbox helps align items perfectly.
+            </p>
+          </div>
+
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white text-center p-4">
+      © 2026 Flexbox Layout
+    </footer>
+
+  </div>
+
+</body>
+</html>
