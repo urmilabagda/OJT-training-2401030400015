@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Css basic properties</title>
+     <meta charset="UTF-8">
+     <style>
+         h2 {
+      color: white;
+      font-size: 24px;
+    }
+    p {
+      background-color: azure;
+      padding: 10px;
+    }
+    .external-box {
+  background-color: lightgreen;
+  color: darkgreen;
+  font-size: 20px;
+  padding: 15px;
+  border: 2px solid green;
+    }   
+     </style>
+     <!--this is the internal part -->
+     <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body> 
+        <!--this is the inline part-->
+         <h1 style="color: red; font-size: 30px;">This is Inline CSS</h1>
+         <h2>this is the Internal css</h2>
+         <p>This paragraph is styled using Internal CSS.</p>
+           <!--this is the external part -->
+        <div class="external-box">This is External CSS</div>
+
+    </body>
+</html>
