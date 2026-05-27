@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Zebra Stripe Table</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-10">
+
+  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-6">
+
+    <h1 class="text-3xl font-bold text-center mb-6 text-blue-600">
+      Zebra Stripe Table Effect
+    </h1>
+
+    <table class="w-full border-collapse text-center">
+
+      <thead>
+        <tr class="bg-blue-600 text-white">
+          <th class="p-3 border">ID</th>
+          <th class="p-3 border">Name</th>
+          <th class="p-3 border">Course</th>
+          <th class="p-3 border">City</th>
+        </tr>
+      </thead>
+
+      <tbody id="tableBody">
+
+        <tr>
+          <td class="p-3 border">1</td>
+          <td class="p-3 border">Rahul</td>
+          <td class="p-3 border">BCA</td>
+          <td class="p-3 border">Ahmedabad</td>
+        </tr>
+
+        <tr>
+          <td class="p-3 border">2</td>
+          <td class="p-3 border">Priya</td>
+          <td class="p-3 border">B.Tech</td>
+          <td class="p-3 border">Surat</td>
+        </tr>
+
+        <tr>
+          <td class="p-3 border">3</td>
+          <td class="p-3 border">Amit</td>
+          <td class="p-3 border">MCA</td>
+          <td class="p-3 border">Vadodara</td>
+        </tr>
+
+        <tr>
+          <td class="p-3 border">4</td>
+          <td class="p-3 border">Neha</td>
+          <td class="p-3 border">MBA</td>
+          <td class="p-3 border">Rajkot</td>
+        </tr>
+
+        <tr>
+          <td class="p-3 border">5</td>
+          <td class="p-3 border">Karan</td>
+          <td class="p-3 border">B.Sc</td>
+          <td class="p-3 border">Bhavnagar</td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- jQuery Zebra Stripe Effect -->
+  <script>
+
+    $(document).ready(function(){
+
+      // Even rows
+      $("#tableBody tr:even").css("background-color", "#f3f4f6");
+
+      // Odd rows
+      $("#tableBody tr:odd").css("background-color", "#dbeafe");
+
+    });
+
+  </script>
+
+</body>
+</html>
