@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ExamDuel.in - Online Quiz & Exam Platform</title>
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- JQUERY -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f5f7fb;
+      color:#222;
+      overflow-x:hidden;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    /* ================= HEADER ================= */
+
+    header{
+      width:100%;
+      background:#111827;
+      padding:15px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo{
+      color:white;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    .logo span{
+      color:#38bdf8;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#38bdf8;
+    }
+
+    .menu-btn{
+      display:none;
+      color:white;
+      font-size:26px;
+      cursor:pointer;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      min-height:90vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:70px 8%;
+      background:linear-gradient(135deg,#0f172a,#1e293b,#0ea5e9);
+      color:white;
+      gap:40px;
+      flex-wrap:wrap;
+    }
+
+    .hero-text{
+      flex:1;
+      min-width:300px;
+    }
+
+    .hero-text h1{
+      font-size:60px;
+      line-height:1.2;
+      margin-bottom:20px;
+    }
+
+    .hero-text p{
+      font-size:18px;
+      margin-bottom:30px;
+      color:#dbeafe;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:14px 28px;
+      border:none;
+      border-radius:10px;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      text-decoration:none;
+      display:inline-block;
+    }
+
+    .primary-btn{
+      background:#38bdf8;
+      color:#111827;
+    }
+
+    .primary-btn:hover{
+      background:white;
+      transform:translateY(-3px);
+    }
+
+    .secondary-btn{
+      border:2px solid white;
+      color:white;
+    }
+
+    .secondary-btn:hover{
+      background:white;
+      color:#111827;
+    }
+
+    .hero-image{
+      flex:1;
+      min-width:300px;
+      text-align:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:520px;
+      animation:float 3s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-15px);}
+      100%{transform:translateY(0px);}
+    }
+
+    /* ================= SECTION TITLE ================= */
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:40px;
+      color:#111827;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#64748b;
+      font-size:17px;
+    }
+
+    /* ================= FEATURES ================= */
+
+    .features{
+      padding:90px 8%;
+      background:white;
+    }
+
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .feature-card{
+      background:#f8fafc;
+      padding:35px 25px;
+      border-radius:18px;
+      text-align:center;
+      transition:0.4s;
+      border:1px solid #e2e8f0;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .feature-card i{
+      font-size:45px;
+      color:#0ea5e9;
+      margin-bottom:20px;
+    }
+
+    .feature-card h3{
+      margin-bottom:12px;
+      color:#111827;
+    }
+
+    .feature-card p{
+      color:#64748b;
+      font-size:15px;
+    }
+
+    /* ================= COURSES ================= */
+
+    .courses{
+      padding:90px 8%;
+      background:#eef6ff;
+    }
+
+    .course-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .course-card{
+      background:white;
+      border-radius:20px;
+      overflow:hidden;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .course-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .course-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .course-content{
+      padding:25px;
+    }
+
+    .course-content h3{
+      margin-bottom:10px;
+      color:#111827;
+    }
+
+    .course-content p{
+      color:#64748b;
+      margin-bottom:18px;
+      font-size:15px;
+    }
+
+    .course-content button{
+      width:100%;
+      padding:12px;
+      border:none;
+      background:#0ea5e9;
+      color:white;
+      border-radius:10px;
+      font-size:15px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .course-content button:hover{
+      background:#0284c7;
+    }
+
+    /* ================= STATS ================= */
+
+    .stats{
+      padding:90px 8%;
+      background:#111827;
+      color:white;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:30px;
+      text-align:center;
+    }
+
+    .stat-box h2{
+      font-size:48px;
+      color:#38bdf8;
+      margin-bottom:10px;
+    }
+
+    .stat-box p{
+      font-size:18px;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact{
+      padding:90px 8%;
+      background:white;
+    }
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:40px;
+      align-items:center;
+    }
+
+    .contact-info h3{
+      font-size:34px;
+      margin-bottom:20px;
+      color:#111827;
+    }
+
+    .contact-info p{
+      color:#64748b;
+      margin-bottom:15px;
+      line-height:1.8;
+    }
+
+    .contact-info i{
+      color:#0ea5e9;
+      margin-right:10px;
+    }
+
+    .contact-form{
+      background:#f8fafc;
+      padding:35px;
+      border-radius:20px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .contact-form input,
+    .contact-form textarea{
+      width:100%;
+      padding:14px;
+      margin-bottom:20px;
+      border:1px solid #cbd5e1;
+      border-radius:10px;
+      outline:none;
+      font-size:15px;
+    }
+
+    .contact-form textarea{
+      resize:none;
+      height:120px;
+    }
+
+    .contact-form button{
+      width:100%;
+      padding:14px;
+      border:none;
+      background:#0ea5e9;
+      color:white;
+      border-radius:10px;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .contact-form button:hover{
+      background:#0284c7;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:#0f172a;
+      color:white;
+      padding:25px 8%;
+      text-align:center;
+    }
+
+    footer p{
+      font-size:15px;
+      color:#cbd5e1;
+    }
+
+    /* ================= SCROLL TOP ================= */
+
+    .scroll-top{
+      position:fixed;
+      right:25px;
+      bottom:25px;
+      width:50px;
+      height:50px;
+      background:#0ea5e9;
+      color:white;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      font-size:20px;
+      display:none;
+      z-index:999;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media(max-width:900px){
+
+      .hero-text h1{
+        font-size:42px;
+      }
+
+      nav{
+        position:absolute;
+        top:75px;
+        right:-100%;
+        width:250px;
+        background:#111827;
+        padding:20px;
+        transition:0.4s;
+      }
+
+      nav.active{
+        right:0;
+      }
+
+      nav ul{
+        flex-direction:column;
+        gap:20px;
+      }
+
+      .menu-btn{
+        display:block;
+      }
+    }
+
+    @media(max-width:600px){
+
+      .hero{
+        padding-top:40px;
+      }
+
+      .hero-text h1{
+        font-size:34px;
+      }
+
+      .section-title h2{
+        font-size:30px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <div class="logo">Exam<span>Duel</span>.in</div>
+
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="menu-btn">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+      <h1>Compete. Learn. Win with ExamDuel.in</h1>
+
+      <p>
+        India’s smart online exam preparation platform for students.
+        Practice MCQs, challenge friends, attend mock tests, and improve your rank.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#courses" class="btn primary-btn">Start Learning</a>
+        <a href="#contact" class="btn secondary-btn">Join Now</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1200&auto=format&fit=crop" alt="Students">
+    </div>
+
+  </section>
+
+  <!-- FEATURES -->
+
+  <section class="features" id="features">
+
+    <div class="section-title">
+      <h2>Platform Features</h2>
+      <p>Everything you need for online exam preparation</p>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <i class="fa-solid fa-file-circle-check"></i>
+        <h3>Mock Tests</h3>
+        <p>Practice real exam style tests with timer and instant results.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-ranking-star"></i>
+        <h3>Leaderboard</h3>
+        <p>Compete with students and improve your national ranking.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-book-open-reader"></i>
+        <h3>Study Material</h3>
+        <p>Get notes, MCQs, and important questions for every subject.</p>
+      </div>
+
+      <div class="feature-card">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Performance Analytics</h3>
+        <p>Track your progress and improve weak topics easily.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- COURSES -->
+
+  <section class="courses" id="courses">
+
+    <div class="section-title">
+      <h2>Popular Exam Categories</h2>
+      <p>Prepare for top competitive exams with smart practice</p>
+    </div>
+
+    <div class="course-grid">
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop" alt="JEE">
+
+        <div class="course-content">
+          <h3>JEE Preparation</h3>
+          <p>Practice Physics, Chemistry, and Mathematics with expert level MCQs.</p>
+          <button>Explore Course</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop" alt="NEET">
+
+        <div class="course-content">
+          <h3>NEET Preparation</h3>
+          <p>Boost Biology, Physics, and Chemistry preparation with mock tests.</p>
+          <button>Explore Course</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" alt="Government Exams">
+
+        <div class="course-content">
+          <h3>Government Exams</h3>
+          <p>SSC, UPSC, Banking, Railway and many more exam practice tests.</p>
+          <button>Explore Course</button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+
+  <section class="stats">
+
+    <div class="stats-grid">
+
+      <div class="stat-box">
+        <h2 class="counter" data-target="25000">0</h2>
+        <p>Students</p>
+      </div>
+
+      <div class="stat-box">
+        <h2 class="counter" data-target="1200">0</h2>
+        <p>Mock Tests</p>
+      </div>
+
+      <div class="stat-box">
+        <h2 class="counter" data-target="450">0</h2>
+        <p>Expert Teachers</p>
+      </div>
+
+      <div class="stat-box">
+        <h2 class="counter" data-target="98">0</h2>
+        <p>Success Rate %</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="contact-wrapper">
+
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+
+        <p>
+          Join ExamDuel.in and improve your exam preparation with smart learning tools.
+        </p>
+
+        <p><i class="fa-solid fa-envelope"></i> support@examduel.in</p>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-location-dot"></i> Ahmedabad, Gujarat, India</p>
+      </div>
+
+      <div class="contact-form">
+
+        <form id="examForm">
+
+          <input type="text" id="name" placeholder="Enter Your Name">
+
+          <input type="email" id="email" placeholder="Enter Your Email">
+
+          <textarea id="message" placeholder="Write Your Message"></textarea>
+
+          <button type="submit">Send Message</button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>© 2026 ExamDuel.in | Designed with HTML, CSS, JavaScript & jQuery</p>
+  </footer>
+
+  <!-- SCROLL TOP -->
+
+  <div class="scroll-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </div>
+
+
+  <script>
+
+    // MOBILE MENU
+
+    $(document).ready(function(){
+
+      $('.menu-btn').click(function(){
+        $('nav').toggleClass('active');
+      });
+
+    });
+
+
+    // CONTACT FORM VALIDATION
+
+    $('#examForm').submit(function(e){
+
+      e.preventDefault();
+
+      let name = $('#name').val().trim();
+      let email = $('#email').val().trim();
+      let message = $('#message').val().trim();
+
+      if(name === '' || email === '' || message === ''){
+        alert('Please fill all fields');
+      }
+      else{
+        alert('Message Sent Successfully!');
+        $('#examForm')[0].reset();
+      }
+
+    });
+
+
+    // COUNTER ANIMATION
+
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+
+      counter.innerText = '0';
+
+      const updateCounter = () => {
+
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+
+        const increment = target / 100;
+
+        if(current < target){
+          counter.innerText = `${Math.ceil(current + increment)}`;
+          setTimeout(updateCounter,20);
+        }
+        else{
+          counter.innerText = target;
+        }
+      }
+
+      updateCounter();
+
+    });
+
+
+    // SCROLL TOP BUTTON
+
+    $(window).scroll(function(){
+
+      if($(this).scrollTop() > 300){
+        $('.scroll-top').fadeIn();
+      }
+      else{
+        $('.scroll-top').fadeOut();
+      }
+
+    });
+
+
+    $('.scroll-top').click(function(){
+
+      $('html, body').animate({scrollTop:0},600);
+
+    });
+
+  </script>
+
+</body>
+</html>
