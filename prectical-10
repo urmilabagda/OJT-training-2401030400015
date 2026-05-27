@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Remove Table Row</title>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-10">
+
+  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-xl p-6">
+
+    <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">
+      Remove Specific Table Row
+    </h1>
+
+    <table class="w-full border-collapse text-center">
+
+      <thead>
+        <tr class="bg-blue-600 text-white">
+          <th class="border p-3">ID</th>
+          <th class="border p-3">Name</th>
+          <th class="border p-3">Course</th>
+          <th class="border p-3">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td class="border p-3">1</td>
+          <td class="border p-3">Rahul</td>
+          <td class="border p-3">BCA</td>
+          <td class="border p-3">
+            <button class="deleteBtn bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+              Delete
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border p-3">2</td>
+          <td class="border p-3">Priya</td>
+          <td class="border p-3">B.Tech</td>
+          <td class="border p-3">
+            <button class="deleteBtn bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+              Delete
+            </button>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="border p-3">3</td>
+          <td class="border p-3">Amit</td>
+          <td class="border p-3">MCA</td>
+          <td class="border p-3">
+            <button class="deleteBtn bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+              Delete
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- jQuery -->
+  <script>
+
+    $(document).ready(function(){
+
+      $(".deleteBtn").click(function(){
+
+        // Remove current row
+        $(this).closest("tr").remove();
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
