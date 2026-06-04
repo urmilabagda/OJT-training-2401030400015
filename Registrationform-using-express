@@ -1,0 +1,80 @@
+const express = require('express');
+
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+
+
+// Registration Form
+app.get('/', (req, res) => {
+    res.send(`
+        <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Registration Form</title>
+
+      <!-- Inline CSS – no external file needed -->
+      <style>
+        form{
+          max-width: 400px;
+          margin: 2rem auto;
+          padding: 1.5rem;
+          border: 1px solid #242121;
+          border-radius: 6px;
+          background: white;
+        }
+        input{
+          padding: .4rem;
+          width: 100%;
+          border: 1px solid black;
+          border-radius: 4px;
+        }
+        button{
+          display: block;
+          width: 100%;
+          padding: .6rem;
+          background: #28a745;
+          color: #fff;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+      </style>
+    </head>
+    <body>
+        <h2>Registration Form</h2>
+
+        <form action="/register" method="POST">
+            Name:<br>
+            <input type="text" name="name" placeholder="Enter Name" required><br><br>
+            Email:<br>
+            <input type="email" name="email" placeholder="Enter Email" required><br><br>
+            Phone:<br>
+            <input type="tel" name="phone" placeholder="Enter your number" required><br><br>
+            Gender:
+            <input type="radio" name="gender" value="Male" required>Male<br>
+            <input type="radio" name="gender" value="Female" required>Female<br>
+            <input type="radio" name="gender" value="Other" required>Other<br><br>
+            
+            <button type="submit">Register</button>
+        </form>
+    `);
+});
+
+// Handle Form Submission
+app.post('/register', (req, res) => {
+    const { name, email, phone,gender } = req.body;
+
+    res.send(`
+        <h2>Registration Successful</h2>
+        <p>Name: ${name}</p>
+        <p>Email: ${email}</p>
+         <p>Phone: ${phone}</p>
+        <p>Gender: ${gender}</p>
+    `);
+});
+
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
+});
