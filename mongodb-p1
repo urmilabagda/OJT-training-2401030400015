@@ -1,0 +1,7 @@
+db.students.insertOne({
+  name: "urmila",
+  age: 20,
+  course: "engineering"
+});
+
+db.students.find();
