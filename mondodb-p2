@@ -1,0 +1,33 @@
+// Create collection
+db.createCollection("customerMaster")
+
+// Insert customer documents
+db.customerMaster.insertMany([
+{
+    customerId: 101,
+    customerName: "bagda urmila",
+    email: "urmila@gmail.com",
+    phone: "9876543210",
+    city: "Ahmedabad",
+    state: "Gujarat"
+},
+{
+    customerId: 102,
+    customerName: "Rahul Sharma",
+    email: "rahul@gmail.com",
+    phone: "9876543211",
+    city: "Mumbai",
+    state: "Maharashtra"
+},
+{
+    customerId: 103,
+    customerName: "Neha Patel",
+    email: "neha@gmail.com",
+    phone: "9876543212",
+    city: "Surat",
+    state: "Gujarat"
+}
+])
+
+// Display all customers
+db.customerMaster.find()
