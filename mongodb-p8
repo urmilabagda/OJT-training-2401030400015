@@ -1,0 +1,30 @@
+db.orderMaster.aggregate([
+{
+    $lookup: {
+        from: "customerMaster",
+        localField: "customerId",
+        foreignField: "_id",
+        as: "customer"
+    }
+},
+{
+    $unwind: "$customer"
+},
+{
+    $project: {
+        _id: 0,
+        OrderID: "$orderId",
+        CustomerName: "$customer.customerName",
+        City: "$customer.city",
+        OrderDate: "$orderDate",
+        Amount: "$amount",
+        GST: { $multiply: ["$amount", 0.18] },
+        TotalBill: {
+            $add: [
+                "$amount",
+                { $multiply: ["$amount", 0.18] }
+            ]
+        }
+    }
+}
+]).toArray()
