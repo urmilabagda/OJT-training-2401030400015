@@ -1,0 +1,34 @@
+db.customerMaster.insertMany([
+{
+    _id: 1,
+    customerName: "Bagda urmila",
+    email: "pooja@gmail.com",
+    phone: "9876543210"
+},
+{
+    _id: 2,
+    customerName: "Rahul Sharma",
+    email: "rahul@gmail.com",
+    phone: "9876543211"
+}
+])
+db.orderMaster.insertMany([
+{
+    orderId: 1001,
+    customerId: 1,
+    orderDate: "2026-06-06",
+    amount: 2500
+},
+{
+    orderId: 1002,
+    customerId: 2,
+    orderDate: "2026-06-07",
+    amount: 1800
+},
+{
+    orderId: 1003,
+    customerId: 1,
+    orderDate: "2026-06-08",
+    amount: 3200
+}
+])
