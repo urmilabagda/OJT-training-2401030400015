@@ -1,0 +1,12 @@
+printjson(
+  db.orderMaster.aggregate([
+    {
+      $lookup: {
+        from: "customerMaster",
+        localField: "customerId",
+        foreignField: "_id",
+        as: "customer"
+      }
+    }
+  ]).toArray()
+)
